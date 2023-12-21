@@ -8,7 +8,7 @@ export const SocialNetworks: FunctionComponent = () => {
   return (
     <div className={socialNetworksStyles['social-networks']}>
       <a
-        href='https://www.instagram.com/6hands.novoross/'
+        href='https://www.instagram.com/in.lime.nvrsk/'
         target='_blank'
         rel="noreferrer noopener"
         className={socialNetworksStyles['social-networks__link']}
@@ -16,7 +16,7 @@ export const SocialNetworks: FunctionComponent = () => {
         <img src={instagram} alt="Инстаграм" className={socialNetworksStyles['social-networks__icon']}/>
       </a>
       <a
-        href='#'
+        href='https://vk.com/inlime_nvrsk'
         target='_blank'
         rel="noreferrer noopener"
         className={socialNetworksStyles['social-networks__link']}>
