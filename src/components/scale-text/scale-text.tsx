@@ -1,14 +1,14 @@
 import React, {FunctionComponent} from 'react';
 
-import marqueeStyles from './marquee.module.css';
+import marqueeStyles from './scale-text.module.css';
 
-export const Marquee: FunctionComponent = () => {
+export const ScaleText: FunctionComponent = () => {
   return (
     <div className={marqueeStyles.container}>
       <div className={marqueeStyles['running-text']}>
         <p className={marqueeStyles.text}>20 числа каждого месяца - клиентский день! Дарим скидку 20%!</p>
-        <p className={marqueeStyles.text}>20 числа каждого месяца - клиентский день! Дарим скидку 20%!</p>
-        <p className={marqueeStyles.text}>20 числа каждого месяца - клиентский день! Дарим скидку 20%!</p>
+        {/*<p className={marqueeStyles.text}>20 числа каждого месяца - клиентский день! Дарим скидку 20%!</p>*/}
+        {/*<p className={marqueeStyles.text}>20 числа каждого месяца - клиентский день! Дарим скидку 20%!</p>*/}
         {/*<p className={marqueeStyles.text}>20 числа каждого месяца - клиентский день! Дарим скидку 20%!</p>*/}
         {/*<p className={marqueeStyles.text}>20 числа каждого месяца - клиентский день! Дарим скидку 20%!</p>*/}
         {/*<p className={marqueeStyles.text}>20 числа каждого месяца - клиентский день! Дарим скидку 20%!</p>*/}

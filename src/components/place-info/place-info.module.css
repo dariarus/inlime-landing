@@ -1,0 +1,15 @@
+.content {
+  padding-left: 100px;
+  background-size: initial;
+}
+
+.text {
+  margin: 0;
+  max-width: 190px;
+  font-family: var(--font-family-secondary);
+  font-weight: 400;
+  font-size: 25px;
+  line-height: normal;
+  color: var(--text-main-color);
+  text-align: center;
+}
