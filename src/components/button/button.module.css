@@ -3,7 +3,7 @@
   width: min-content;
   border: 2px solid #fff;
   border-radius: 20px;
-  font-family: var(--font-family-main);
+  font-family: var( --font-family-helvetica);
   font-weight: 700;
   font-size: 17px;
   line-height: normal;

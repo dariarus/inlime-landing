@@ -1,5 +1,5 @@
 .hero {
-
+  padding-bottom: 50px;
 }
 
 .info {
@@ -39,7 +39,7 @@
 }
 
 .text_main {
-  font-family: var(--font-family-secondary);
+  font-family: var(--font-family-oswald);
   font-weight: 400;
   line-height: normal;
 }
@@ -49,7 +49,7 @@
 }
 
 .text_paragraph {
-  font-family: var(--font-family-main);
+  font-family: var(--font-family-helvetica);
   font-weight: 400;
   font-size: 20px;
 }

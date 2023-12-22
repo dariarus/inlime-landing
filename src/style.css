@@ -12,12 +12,12 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   
-  --text-main-color: #fff;
+  --color-white: #fff;
   --text-secondary-color: #000;
   --color-lime: #bada55;
   --color-pink: #dA55d7;
-  --font-family-main: 'Helvetica', 'Arial', sans-serif;
-  --font-family-secondary: 'Oswald', 'Arial', sans-serif;
+  --font-family-helvetica: 'Helvetica', 'Arial', sans-serif;
+  --font-family-oswald: 'Oswald', 'Arial', sans-serif;
 }
 
 body {

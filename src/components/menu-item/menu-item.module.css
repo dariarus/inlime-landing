@@ -1,0 +1,31 @@
+.menu-item {
+  padding: 20px 10px 10px;
+  background-color: var(--color-lime);
+  border: 2px solid var(--color-white);
+  cursor: pointer;
+}
+
+.menu-item__picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1);
+  transition: transform .3s;
+}
+
+.menu-item:hover .menu-item__picture {
+  transform: scale(0.95);
+}
+
+.menu-item__heading {
+  margin: 20px 0 0;
+  font-family: var( --font-family-helvetica);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: normal;
+  letter-spacing: 0.15em;
+  text-align: center;
+  text-transform: uppercase;
+}

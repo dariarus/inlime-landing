@@ -17,7 +17,7 @@ export const Header: FunctionComponent = () => {
           <p className={headerStyles.text}>ул.Южная, 9</p>
         </div>
       </div>
-      <span className={headerStyles.header__decor}/>
+      <div className={headerStyles.header__decor}/>
       <nav className={headerStyles.navigation}>
         <ul className={headerStyles.navigation__list}>
           <li className={headerStyles['navigation__list-item']}>
