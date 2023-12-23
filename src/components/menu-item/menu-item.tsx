@@ -9,9 +9,9 @@ type TMenuItemProps = {
 
 export const MenuItem: FunctionComponent<TMenuItemProps> = (props) => {
   return (
-    <div className={menuItemStyles['menu-item']}>
+    <li className={menuItemStyles['menu-item']}>
       <img src={props.url} alt={props.service} className={menuItemStyles['menu-item__picture']}/>
       <p className={menuItemStyles['menu-item__heading']}>{props.service}</p>
-    </div>
+    </li>
   )
 }

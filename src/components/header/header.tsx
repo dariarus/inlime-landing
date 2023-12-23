@@ -24,6 +24,9 @@ export const Header: FunctionComponent = () => {
             <a href={'#'} className={`${headerStyles.text} ${headerStyles.text_link}`}>О нас</a>
           </li>
           <li className={headerStyles['navigation__list-item']}>
+            <a href={'#'} className={`${headerStyles.text} ${headerStyles.text_link}`}>Услуги</a>
+          </li>
+          <li className={headerStyles['navigation__list-item']}>
             <a href={'#'} className={`${headerStyles.text} ${headerStyles.text_link}`}>Прайс</a>
           </li>
           <li className={headerStyles['navigation__list-item']}>
