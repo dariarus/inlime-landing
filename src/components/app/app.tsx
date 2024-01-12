@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from 'react';
+import React, {FunctionComponent, useState} from 'react';
 
 import appStyles from './app.module.css';
 import manicure from '../../images/1.jpg';
@@ -12,8 +12,13 @@ import interior3 from '../../images/interior/interiоr-3.jpg';
 import {Header} from '../header/header';
 import {Hero} from '../hero/hero';
 import {MenuItem} from '../menu-item/menu-item';
+import {galleryPictures} from '../../utils/cpnstants';
+import {Popup} from '../popup/popup';
 
 const App: FunctionComponent = () => {
+  const [popupIsOpened, setPopupIsOpened] = useState<boolean>(false)
+  const [imageToShow, setImageToShow] = useState<{ src: string, index: number }>({src: '', index: 0})
+
   return (
     <div className={appStyles.content}>
       <Header/>
@@ -51,6 +56,48 @@ const App: FunctionComponent = () => {
             <img src={interior3} alt="Фото интерьера" className={appStyles['about-us__interior-photo']}/>
           </div>
         </section>
+        <section className={appStyles.section}>
+          <h2 className={appStyles.section__heading}>Галерея</h2>
+          <ul className={appStyles.gallery}>
+            {
+              galleryPictures.map((picture, index) => (
+                <li className={appStyles['gallery-item']} onClick={() => {
+                  setPopupIsOpened(true);
+                  setImageToShow({src: picture, index: index})
+                }}>
+                  <img src={picture} alt="Фото для галереи" className={appStyles['gallery-item__picture']}/>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+        {
+          popupIsOpened &&
+          <Popup
+            image={imageToShow.src}
+            disabledLeft={imageToShow.index === 0}
+            disabledRight={imageToShow.index + 1 === galleryPictures.length}
+            onClosePopup={() => setPopupIsOpened(false)}
+            passLeft={() => {
+              if (imageToShow.index - 1 >= 0) {
+                const previousImageSrc = galleryPictures[imageToShow.index - 1]
+                setImageToShow({
+                  src: previousImageSrc,
+                  index: imageToShow.index - 1
+                })
+              }
+            }}
+            passRight={() => {
+              if (imageToShow.index + 1 < galleryPictures.length) {
+                const previousImageSrc = galleryPictures[imageToShow.index + 1]
+                setImageToShow({
+                  src: previousImageSrc,
+                  index: imageToShow.index + 1
+                })
+              }
+            }}
+          />
+        }
       </main>
     </div>
   )

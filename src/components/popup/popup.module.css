@@ -1,0 +1,55 @@
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 700px;
+  max-height: 500px;
+  z-index: 4;
+  transform: translate(-50%, -50%);
+}
+
+.popup-button {
+  all: unset;
+  position: absolute;
+  cursor: pointer;
+  transition: transform .2s ease;
+}
+
+.popup-button:not(:disabled):hover {
+  transform: scale(1.5, 1.5);
+}
+
+.popup-button_cross {
+  top: -5%;
+  right: -10%;
+  width: 20px;
+  height: 20px;
+  background: url(../../images/cross.svg) center center no-repeat;
+}
+
+.popup-button_arrow {
+  top: calc(50% - 150px / 2);
+  width: 50px;
+  height: 150px;
+}
+
+.popup-button_arrow:disabled {
+  display: none;
+}
+
+.popup-button_arrow_left {
+  left: -20%;
+  background: url(../../images/arrow-left.svg) center center no-repeat;
+}
+
+.popup-button_arrow_right {
+  right: -20%;
+  background: url(../../images/arrow-right.svg) center center no-repeat;
+}
+
+.image {
+  max-width: 100%;
+  max-height: inherit;
+  object-fit: cover;
+  object-position: top center;
+}
