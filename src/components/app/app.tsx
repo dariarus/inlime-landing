@@ -23,10 +23,11 @@ import {
 } from '../../utils/constants';
 import {Popup} from '../popup/popup';
 import {Service} from '../service/service';
+import {TImage} from '../../services/types';
 
 const App: FunctionComponent = () => {
-  const [popupIsOpened, setPopupIsOpened] = useState<boolean>(false)
-  const [imageToShow, setImageToShow] = useState<{ src: string, index: number }>({src: '', index: 0})
+  const [popupIsOpened, setPopupIsOpened] = useState<boolean>(false);
+  const [imageToShow, setImageToShow] = useState<TImage>({src: '', index: 0});
 
   return (
     <div className={appStyles.content}>
@@ -82,36 +83,18 @@ const App: FunctionComponent = () => {
         </section>
         <section className={appStyles.section}>
           <h2 className={appStyles.section__heading}>Стоимость услуг</h2>
-          <Service serviceHeading="Маникюр" servicesList={manicureService} picturesList={manicurePortfolio}/>
-          <Service serviceHeading="Педикюр" servicesList={pedicureService} picturesList={pedicurePortfolio}/>
-          {/*<Service serviceHeading="Брови" servicesList={} picturesList={browsPortfolio}/>*/}
-          <Service serviceHeading="Реснички" servicesList={eyelashesService} picturesList={eyelashesPortfolio}/>
+          <Service serviceHeading="Маникюр" servicesList={manicureService} portfolio={manicurePortfolio}/>
+          <Service serviceHeading="Педикюр" servicesList={pedicureService} portfolio={pedicurePortfolio}/>
+          {/*<Service serviceHeading="Брови" servicesList={} portfolio={browsPortfolio}/>*/}
+          <Service serviceHeading="Реснички" servicesList={eyelashesService} portfolio={eyelashesPortfolio}/>
         </section>
         {
           popupIsOpened &&
           <Popup
-            image={imageToShow.src}
-            disabledLeft={imageToShow.index === 0}
-            disabledRight={imageToShow.index + 1 === galleryPictures.length}
+            imagesList={galleryPictures}
+            imageToShow={imageToShow}
+            setImageToShow={setImageToShow}
             onClosePopup={() => setPopupIsOpened(false)}
-            passLeft={() => {
-              if (imageToShow.index - 1 >= 0) {
-                const previousImageSrc = galleryPictures[imageToShow.index - 1]
-                setImageToShow({
-                  src: previousImageSrc,
-                  index: imageToShow.index - 1
-                })
-              }
-            }}
-            passRight={() => {
-              if (imageToShow.index + 1 < galleryPictures.length) {
-                const previousImageSrc = galleryPictures[imageToShow.index + 1]
-                setImageToShow({
-                  src: previousImageSrc,
-                  index: imageToShow.index + 1
-                })
-              }
-            }}
           />
         }
       </main>

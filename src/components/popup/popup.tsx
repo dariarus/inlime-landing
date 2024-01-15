@@ -4,14 +4,13 @@ import ReactDOM from 'react-dom';
 import popupStyles from './popup.module.css';
 
 import {Overlay} from '../overlay/overlay';
+import {TImage} from '../../services/types';
 
 type TPopup = {
-  image: string;
-  disabledLeft: boolean;
-  disabledRight: boolean;
+  imagesList: string[];
+  imageToShow: TImage;
+  setImageToShow: (image: TImage) => void;
   onClosePopup: () => void;
-  passLeft: () => void;
-  passRight: () => void;
 }
 
 export const Popup: FunctionComponent<TPopup> = (props) => {
@@ -42,14 +41,30 @@ export const Popup: FunctionComponent<TPopup> = (props) => {
             />
             <button
               className={`${popupStyles['popup-button']} ${popupStyles['popup-button_arrow']} ${popupStyles['popup-button_arrow_left']}`}
-              disabled={props.disabledLeft}
-              onClick={props.passLeft}
+              disabled={props.imageToShow.index === 0}
+              onClick={() => {
+                if (props.imageToShow.index - 1 >= 0) {
+                  const previousImageSrc = props.imagesList[props.imageToShow.index - 1]
+                  props.setImageToShow({
+                    src: previousImageSrc,
+                    index: props.imageToShow.index - 1
+                  })
+                }
+              }}
             />
-            <img src={props.image} alt="Просматриваемое фото" className={popupStyles.image}/>
+            <img src={props.imageToShow.src} alt="Просматриваемое фото" className={popupStyles.image}/>
             <button
               className={`${popupStyles['popup-button']} ${popupStyles['popup-button_arrow']} ${popupStyles['popup-button_arrow_right']}`}
-              disabled={props.disabledRight}
-              onClick={props.passRight}
+              disabled={props.imageToShow.index + 1 === props.imagesList.length}
+              onClick={() => {
+                if (props.imageToShow.index + 1 < props.imagesList.length) {
+                  const nextImageSrc = props.imagesList[props.imageToShow.index + 1]
+                  props.setImageToShow({
+                    src: nextImageSrc,
+                    index: props.imageToShow.index + 1
+                  })
+                }
+              }}
             />
           </div>
         </>

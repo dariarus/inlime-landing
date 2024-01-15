@@ -191,6 +191,8 @@ export const eyelashesService = [
   },
 ];
 
-export const widthOfOuterSliderWindow = 755;
+export const widthOfOuterSliderWindow = 760;
 export const widthOfSliderElement = 245;
-export const gapBetweenSliderElements = 10;
+
+// gap 10px, но из-за рамки для li добавилось 2px
+export const gapBetweenSliderElements = 12;

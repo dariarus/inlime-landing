@@ -7,8 +7,8 @@ import {Slider} from '../slider/slider';
 
 type TService = {
   serviceHeading: string;
-  servicesList: Array<{serviceName: string, servicePrice: string}>;
-  picturesList: string[];
+  servicesList: Array<{ serviceName: string, servicePrice: string }>;
+  portfolio: string[];
 }
 
 export const Service: FunctionComponent<TService> = (props) => {
@@ -16,11 +16,11 @@ export const Service: FunctionComponent<TService> = (props) => {
     <div className={serviceStyles['service-content']}>
       <h3 className={serviceStyles['service-content__heading']}>{props.serviceHeading}</h3>
       {
-        props.servicesList.map(service => (
-          <ServiceItem serviceName={service.serviceName} servicePrice={service.servicePrice}/>
+        props.servicesList.map((service, index) => (
+          <ServiceItem key={index} serviceName={service.serviceName} servicePrice={service.servicePrice}/>
         ))
       }
-      <Slider picturesArray={props.picturesList}/>
+      <Slider picturesArray={props.portfolio}/>
     </div>
   )
 }
