@@ -3,18 +3,21 @@ import React, {FunctionComponent, useState} from 'react';
 import sliderStyles from './slider.module.css';
 import {
   gapBetweenSliderElements,
-  manicurePortfolio,
   widthOfOuterSliderWindow,
   widthOfSliderElement
 } from '../../utils/constants';
 
-export const Slider: FunctionComponent = () => {
+type TSlider = {
+  picturesArray: string[];
+}
+
+export const Slider: FunctionComponent<TSlider> = (props) => {
   const [activeIndex, setActiveIndex] = useState<number>(0)
 
   // Величина сдвига слайдера = длина 1 элемента + gap
   const translateWidth = widthOfSliderElement + gapBetweenSliderElements;
   // Длина внутреннего окна слайдера, т.е. длина в px всего массива элементов
-  const fullElementsArrayWidthInPx = manicurePortfolio.length * translateWidth;
+  const fullElementsArrayWidthInPx = props.picturesArray.length * translateWidth;
   // Максимально возможный activeIndex, с учетом того, что последний сдвиг происходит без 10px gap-а
   const maxIndex = (fullElementsArrayWidthInPx - widthOfOuterSliderWindow - gapBetweenSliderElements) / translateWidth
 
@@ -33,7 +36,7 @@ export const Slider: FunctionComponent = () => {
                transform: `translateX(-${activeIndex * translateWidth}px)`
              }}>
           {
-            manicurePortfolio.map((picture, index) => (
+            props.picturesArray.map((picture, index) => (
               <img key={index} src={picture} alt="Пример работы" className={sliderStyles.slider__picture}/>
             ))
           }

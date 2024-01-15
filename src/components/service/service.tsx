@@ -8,18 +8,19 @@ import {Slider} from '../slider/slider';
 type TService = {
   serviceHeading: string;
   servicesList: Array<{serviceName: string, servicePrice: string}>;
+  picturesList: string[];
 }
 
 export const Service: FunctionComponent<TService> = (props) => {
   return (
-    <div>
-      <h3 className={serviceStyles.heading}>{props.serviceHeading}</h3>
+    <div className={serviceStyles['service-content']}>
+      <h3 className={serviceStyles['service-content__heading']}>{props.serviceHeading}</h3>
       {
         props.servicesList.map(service => (
           <ServiceItem serviceName={service.serviceName} servicePrice={service.servicePrice}/>
         ))
       }
-      <Slider/>
+      <Slider picturesArray={props.picturesList}/>
     </div>
   )
 }

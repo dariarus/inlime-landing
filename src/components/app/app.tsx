@@ -2,9 +2,9 @@ import React, {FunctionComponent, useState} from 'react';
 
 import appStyles from './app.module.css';
 import manicure from '../../images/manicure/maniqure-1.jpg';
-import pedicure from '../../images/2.jpg';
-import brows from '../../images/5.jpg';
-import eyelashes from '../../images/1N_xwlUyOII.jpg';
+import pedicure from '../../images/pedicure/pedicure-2.jpg';
+import brows from '../../images/brows/brows-5.jpg';
+import eyelashes from '../../images/eyelashes/eyelashes-3.jpg';
 import interior1 from '../../images/interior/interiоr-1.jpg';
 import interior2 from '../../images/interior/interiоr-2.jpg';
 import interior3 from '../../images/interior/interiоr-3.jpg';
@@ -12,7 +12,15 @@ import interior3 from '../../images/interior/interiоr-3.jpg';
 import {Header} from '../header/header';
 import {Hero} from '../hero/hero';
 import {MenuItem} from '../menu-item/menu-item';
-import {galleryPictures, manicureService} from '../../utils/constants';
+import {
+  // browsPortfolio,
+  eyelashesPortfolio, eyelashesService,
+  galleryPictures,
+  manicurePortfolio,
+  manicureService,
+  pedicurePortfolio,
+  pedicureService
+} from '../../utils/constants';
 import {Popup} from '../popup/popup';
 import {Service} from '../service/service';
 
@@ -62,7 +70,7 @@ const App: FunctionComponent = () => {
           <ul className={appStyles.gallery}>
             {
               galleryPictures.map((picture, index) => (
-                <li className={appStyles['gallery-item']} onClick={() => {
+                <li key={index} className={appStyles['gallery-item']} onClick={() => {
                   setPopupIsOpened(true);
                   setImageToShow({src: picture, index: index})
                 }}>
@@ -74,7 +82,10 @@ const App: FunctionComponent = () => {
         </section>
         <section className={appStyles.section}>
           <h2 className={appStyles.section__heading}>Стоимость услуг</h2>
-          <Service serviceHeading="Маникюр" servicesList={manicureService}/>
+          <Service serviceHeading="Маникюр" servicesList={manicureService} picturesList={manicurePortfolio}/>
+          <Service serviceHeading="Педикюр" servicesList={pedicureService} picturesList={pedicurePortfolio}/>
+          {/*<Service serviceHeading="Брови" servicesList={} picturesList={browsPortfolio}/>*/}
+          <Service serviceHeading="Реснички" servicesList={eyelashesService} picturesList={eyelashesPortfolio}/>
         </section>
         {
           popupIsOpened &&

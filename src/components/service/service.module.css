@@ -1,4 +1,8 @@
-.heading {
+.service-content {
+  margin-bottom: 60px;
+}
+
+.service-content__heading {
   margin: 0 0 10px;
   text-align: center;
   font-family: var(--font-family-oswald);
