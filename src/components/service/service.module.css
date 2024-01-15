@@ -1,0 +1,10 @@
+.heading {
+  margin: 0 0 10px;
+  text-align: center;
+  font-family: var(--font-family-oswald);
+  font-weight: 400;
+  font-size: 35px;
+  line-height: normal;
+  letter-spacing: .01em;
+  color: var(--color-white);
+}

@@ -1,7 +1,7 @@
 import React, {FunctionComponent, useState} from 'react';
 
 import appStyles from './app.module.css';
-import manicure from '../../images/1.jpg';
+import manicure from '../../images/manicure/maniqure-1.jpg';
 import pedicure from '../../images/2.jpg';
 import brows from '../../images/5.jpg';
 import eyelashes from '../../images/1N_xwlUyOII.jpg';
@@ -12,8 +12,9 @@ import interior3 from '../../images/interior/interiоr-3.jpg';
 import {Header} from '../header/header';
 import {Hero} from '../hero/hero';
 import {MenuItem} from '../menu-item/menu-item';
-import {galleryPictures} from '../../utils/cpnstants';
+import {galleryPictures, manicureService} from '../../utils/constants';
 import {Popup} from '../popup/popup';
+import {Service} from '../service/service';
 
 const App: FunctionComponent = () => {
   const [popupIsOpened, setPopupIsOpened] = useState<boolean>(false)
@@ -70,6 +71,10 @@ const App: FunctionComponent = () => {
               ))
             }
           </ul>
+        </section>
+        <section className={appStyles.section}>
+          <h2 className={appStyles.section__heading}>Стоимость услуг</h2>
+          <Service serviceHeading="Маникюр" servicesList={manicureService}/>
         </section>
         {
           popupIsOpened &&
