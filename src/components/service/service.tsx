@@ -4,6 +4,7 @@ import serviceStyles from './service.module.css';
 
 import {ServiceItem} from '../service-item/service-item';
 import {Slider} from '../slider/slider';
+import {Button} from '../button/button';
 
 type TService = {
   serviceHeading: string;
@@ -20,6 +21,9 @@ export const Service: FunctionComponent<TService> = (props) => {
           <ServiceItem key={index} serviceName={service.serviceName} servicePrice={service.servicePrice}/>
         ))
       }
+      <div className={serviceStyles['service-content__button-wrap']}>
+        <Button type="small" color="pink"/>
+      </div>
       <Slider picturesArray={props.portfolio}/>
     </div>
   )

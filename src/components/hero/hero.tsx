@@ -24,7 +24,7 @@ export const Hero: FunctionComponent = () => {
             маникюр, педикюр и наращивание ресничек
             как по отдельности, так и комплексом
             в 4 или 6 рук на удобном кресле-реклайнере</p>
-          <Button type="small"/>
+          <Button type="small" color="lime"/>
         {/*</div>*/}
         {/*<div className={heroStyles.info__contacts}>*/}
           <PlaceInfo text="+7 (964) 893-23-68" background={whatsAppIcon} bgParams="0 top / 20%"/>

@@ -3,7 +3,7 @@
   width: min-content;
   border: 2px solid #fff;
   border-radius: 20px;
-  font-family: var( --font-family-helvetica);
+  font-family: var(--font-family-helvetica);
   font-weight: 700;
   font-size: 17px;
   line-height: normal;
@@ -11,16 +11,25 @@
   transition: background-color .5s;
 }
 
-.button_large {
+.button:hover {
+  background-color: #fff;
+}
 
+.button_large {
+  padding: 20px 60px;
 }
 
 .button_small {
   padding: 10px 47px;
+  
+}
+
+.button_color_lime {
   background: var(--color-lime);
   color: var(--text-secondary-color);
 }
 
-.button_small:hover {
-  background-color: #fff;
+.button_color_pink {
+  background: var(--color-pink);
+  /*color: var(--color-white);*/
 }

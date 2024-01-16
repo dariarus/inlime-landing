@@ -8,6 +8,9 @@ import eyelashes from '../../images/eyelashes/eyelashes-3.jpg';
 import interior1 from '../../images/interior/interiоr-1.jpg';
 import interior2 from '../../images/interior/interiоr-2.jpg';
 import interior3 from '../../images/interior/interiоr-3.jpg';
+import promoClientDay from '../../images/promotions/promo_client-day.jpg';
+import promoFirstVisit from '../../images/promotions/promo_first-visit.jpg';
+import promoBirthday from '../../images/promotions/promo_birthday.jpg';
 
 import {Header} from '../header/header';
 import {Hero} from '../hero/hero';
@@ -24,6 +27,8 @@ import {
 import {Popup} from '../popup/popup';
 import {Service} from '../service/service';
 import {TImage} from '../../services/types';
+import {Promo} from '../promo/promo';
+import {Button} from '../button/button';
 
 const App: FunctionComponent = () => {
   const [popupIsOpened, setPopupIsOpened] = useState<boolean>(false);
@@ -44,7 +49,7 @@ const App: FunctionComponent = () => {
           </ul>
         </menu>
         <section className={appStyles.section}>
-          <h2 className={appStyles.section__heading}>О нас</h2>
+          <h2 className={`${appStyles.section__text} ${appStyles.section__text_heading}`}>О нас</h2>
           <div className={appStyles['about-us']}>
             <p className={appStyles.text}>
               <span className={appStyles.text_color_pink}>In</span><span
@@ -67,7 +72,7 @@ const App: FunctionComponent = () => {
           </div>
         </section>
         <section className={appStyles.section}>
-          <h2 className={appStyles.section__heading}>Галерея</h2>
+          <h2 className={`${appStyles.section__text} ${appStyles.section__text_heading}`}>Галерея</h2>
           <ul className={appStyles.gallery}>
             {
               galleryPictures.map((picture, index) => (
@@ -82,11 +87,30 @@ const App: FunctionComponent = () => {
           </ul>
         </section>
         <section className={appStyles.section}>
-          <h2 className={appStyles.section__heading}>Стоимость услуг</h2>
+          <h2 className={`${appStyles.section__text} ${appStyles.section__text_heading}`}>Стоимость услуг</h2>
           <Service serviceHeading="Маникюр" servicesList={manicureService} portfolio={manicurePortfolio}/>
           <Service serviceHeading="Педикюр" servicesList={pedicureService} portfolio={pedicurePortfolio}/>
           {/*<Service serviceHeading="Брови" servicesList={} portfolio={browsPortfolio}/>*/}
           <Service serviceHeading="Реснички" servicesList={eyelashesService} portfolio={eyelashesPortfolio}/>
+        </section>
+        <section className={appStyles.section}>
+          <h2 className={`${appStyles.section__text} ${appStyles.section__text_heading}`}>Акции</h2>
+          <h3 className={`${appStyles.section__text} ${appStyles.section__text_subheading}`}>
+            Специальные предложения от студии красоты <span
+            className={`${appStyles.text} ${appStyles.text_color_pink}`}>In</span><span
+            className={`${appStyles.text} ${appStyles.text_color_lime}`}>Lime</span>
+          </h3>
+          <div className={appStyles.promotions}>
+            <Promo promoImage={promoClientDay} heading="Клиентский день! -20% руб на все услуги"
+                   description="Предложение актуально при записи на 20 число каждого месяца"/>
+            <Promo promoImage={promoFirstVisit} heading="Знакомство с InLime! -300 руб на любые услуги"
+                   description="Предложение актуально для клиентов, которые впервые записываются в студию"/>
+            <Promo promoImage={promoBirthday} heading="Подарок в день рождения! -25% на все услуги"
+                   description="Предложение актуально всю неделю до Вашего Дня рождения и неделю после"/>
+          </div>
+          <div className={appStyles['button-wrap']}>
+            <Button type="large" color="lime"/>
+          </div>
         </section>
         {
           popupIsOpened &&

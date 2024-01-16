@@ -23,7 +23,7 @@
 }
 
 .section {
-  padding-top: 25px;
+  padding-top: 40px;
 }
 
 .about-us {
@@ -33,15 +33,24 @@
   gap: 20px 0;
 }
 
-.section__heading {
-  margin: 0 0 20px;
+.section__text {
+  margin: 0;
   text-align: center;
-  font-family: var(--font-family-oswald);
   font-weight: 400;
-  font-size: 43px;
   line-height: normal;
   letter-spacing: .01em;
   color: var(--color-white);
+}
+
+.section__text_heading {
+  margin: 0 0 20px;
+  font-family: var(--font-family-oswald);
+  font-size: 43px;
+}
+
+.section__text_subheading {
+  font-family: var(--font-family-helvetica);
+  font-size: 20px;
 }
 
 .text {
@@ -101,4 +110,15 @@
   height: 100%;
   object-fit: cover;
   object-position: top;
+}
+
+.promotions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.button-wrap {
+  margin: 60px auto 0;
+  max-width: min-content;
 }
