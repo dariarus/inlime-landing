@@ -109,7 +109,7 @@ const App: FunctionComponent = () => {
                    description="Предложение актуально всю неделю до Вашего Дня рождения и неделю после"/>
           </div>
           <div className={appStyles['button-wrap']}>
-            <Button type="large" color="lime"/>
+            <Button type="small" color="lime"/>
           </div>
         </section>
         {
