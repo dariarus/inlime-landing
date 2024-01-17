@@ -44,16 +44,16 @@ import eyelashesPortfolioPicture8 from '../images/eyelashes/eyelashes-8.jpg';
 import eyelashesPortfolioPicture9 from '../images/eyelashes/eyelashes-9.jpg';
 import eyelashesPortfolioPicture10 from '../images/eyelashes/eyelashes-10.jpg';
 
-import browsPortfolioPicture1 from '../images/brows/brows-1.jpg';
-import browsPortfolioPicture2 from '../images/brows/brows-2.jpg';
-import browsPortfolioPicture3 from '../images/brows/brows-3.jpg';
-import browsPortfolioPicture4 from '../images/brows/brows-4.jpg';
-import browsPortfolioPicture5 from '../images/brows/brows-5.jpg';
-import browsPortfolioPicture6 from '../images/brows/brows-6.jpg';
-import browsPortfolioPicture7 from '../images/brows/brows-7.jpg';
-import browsPortfolioPicture8 from '../images/brows/brows-8.jpg';
-import browsPortfolioPicture9 from '../images/brows/brows-9.jpg';
-import browsPortfolioPicture10 from '../images/brows/brows-10.jpg';
+import eyebrowsPortfolioPicture1 from '../images/eyebrows/eyebrows-1.jpg';
+import eyebrowsPortfolioPicture2 from '../images/eyebrows/eyebrows-2.jpg';
+import eyebrowsPortfolioPicture3 from '../images/eyebrows/eyebrows-3.jpg';
+import eyebrowsPortfolioPicture4 from '../images/eyebrows/eyebrows-4.jpg';
+import eyebrowsPortfolioPicture5 from '../images/eyebrows/eyebrows-5.jpg';
+import eyebrowsPortfolioPicture6 from '../images/eyebrows/eyebrows-6.jpg';
+import eyebrowsPortfolioPicture7 from '../images/eyebrows/eyebrows-7.jpg';
+import eyebrowsPortfolioPicture8 from '../images/eyebrows/eyebrows-8.jpg';
+import eyebrowsPortfolioPicture9 from '../images/eyebrows/eyebrows-9.jpg';
+import eyebrowsPortfolioPicture10 from '../images/eyebrows/eyebrows-10.jpg';
 
 export const galleryPictures = [
   galleryPicture1,
@@ -96,17 +96,17 @@ export const pedicurePortfolio = [
   pedicurePortfolioPicture10,
 ];
 
-export const browsPortfolio = [
-  browsPortfolioPicture1,
-  browsPortfolioPicture2,
-  browsPortfolioPicture3,
-  browsPortfolioPicture4,
-  browsPortfolioPicture5,
-  browsPortfolioPicture6,
-  browsPortfolioPicture7,
-  browsPortfolioPicture8,
-  browsPortfolioPicture9,
-  browsPortfolioPicture10,
+export const eyebrowsPortfolio = [
+  eyebrowsPortfolioPicture1,
+  eyebrowsPortfolioPicture2,
+  eyebrowsPortfolioPicture3,
+  eyebrowsPortfolioPicture4,
+  eyebrowsPortfolioPicture5,
+  eyebrowsPortfolioPicture6,
+  eyebrowsPortfolioPicture7,
+  eyebrowsPortfolioPicture8,
+  eyebrowsPortfolioPicture9,
+  eyebrowsPortfolioPicture10,
 ]
 
 export const eyelashesPortfolio = [

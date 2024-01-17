@@ -3,7 +3,7 @@ import React, {FunctionComponent, useState} from 'react';
 import appStyles from './app.module.css';
 import manicure from '../../images/manicure/maniqure-1.jpg';
 import pedicure from '../../images/pedicure/pedicure-2.jpg';
-import brows from '../../images/brows/brows-5.jpg';
+import eyebrows from '../../images/eyebrows/eyebrows-5.jpg';
 import eyelashes from '../../images/eyelashes/eyelashes-3.jpg';
 import interior1 from '../../images/interior/interiоr-1.jpg';
 import interior2 from '../../images/interior/interiоr-2.jpg';
@@ -16,8 +16,9 @@ import {Header} from '../header/header';
 import {Hero} from '../hero/hero';
 import {MenuItem} from '../menu-item/menu-item';
 import {
-  // browsPortfolio,
-  eyelashesPortfolio, eyelashesService,
+  // eyebrowsPortfolio,
+  eyelashesPortfolio,
+  eyelashesService,
   galleryPictures,
   manicurePortfolio,
   manicureService,
@@ -45,7 +46,7 @@ const App: FunctionComponent = () => {
           <ul className={appStyles.menu__list}>
             <MenuItem service="Маникюр" url={manicure}/>
             <MenuItem service="Педикюр" url={pedicure}/>
-            <MenuItem service="Брови" url={brows}/>
+            <MenuItem service="Брови" url={eyebrows}/>
             <MenuItem service="Реснички" url={eyelashes}/>
           </ul>
         </menu>
@@ -91,7 +92,7 @@ const App: FunctionComponent = () => {
           <h2 className={`${appStyles.section__text} ${appStyles.section__text_heading}`}>Стоимость услуг</h2>
           <Service serviceHeading="Маникюр" servicesList={manicureService} portfolio={manicurePortfolio}/>
           <Service serviceHeading="Педикюр" servicesList={pedicureService} portfolio={pedicurePortfolio}/>
-          {/*<Service serviceHeading="Брови" servicesList={} portfolio={browsPortfolio}/>*/}
+          {/*<Service serviceHeading="Брови" servicesList={} portfolio={eyebrowsPortfolio}/>*/}
           <Service serviceHeading="Реснички" servicesList={eyelashesService} portfolio={eyelashesPortfolio}/>
         </section>
         <section className={appStyles.section}>
