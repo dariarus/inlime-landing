@@ -30,29 +30,18 @@
   text-align: end;
 }
 
-.text_link {
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 17px;
-  font-weight: 700;
-}
-
-.text_link:hover {
-  text-decoration: underline;
-}
-
 .header__decor {
   width: 100%;
   height: 1px;
   background-color: var(--color-white);
 }
 
-.navigation {
+.navigation-wrap {
   display: flex;
   justify-content: center;
 }
 
-.navigation__list {
+.navigation {
   display: flex;
   justify-content: space-between;
   margin: 0;

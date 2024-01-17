@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useState} from 'react';
+import React, {FunctionComponent, useRef, useState} from 'react';
 
 import appStyles from './app.module.css';
 import manicure from '../../images/manicure/maniqure-1.jpg';
@@ -26,8 +26,8 @@ import {
   pedicureService
 } from '../../utils/constants';
 import {Popup} from '../popup/popup';
-import {Service} from '../service/service';
-import {TImage} from '../../services/types';
+import {ServiceType} from '../service-type/service-type';
+import {TCombinedNavRef, TImage} from '../../services/types';
 import {Promo} from '../promo/promo';
 import {Button} from '../button/button';
 import {SocialNetworks} from '../social-networks/social-networks';
@@ -36,27 +36,44 @@ const App: FunctionComponent = () => {
   const [popupIsOpened, setPopupIsOpened] = useState<boolean>(false);
   const [imageToShow, setImageToShow] = useState<TImage>({src: '', index: 0});
 
+  const servicesTypesRef = useRef<HTMLDivElement>(null);
+  const aboutUsRef = useRef<HTMLDivElement>(null);
+  const priceRef = useRef<HTMLDivElement>(null);
+  const promosRef = useRef<HTMLDivElement>(null);
+
+  const manicureRef = useRef<HTMLDivElement>(null);
+  const pedicureRef = useRef<HTMLDivElement>(null);
+  const eyebrowsRef = useRef<HTMLDivElement>(null);
+  const eyelashesRef = useRef<HTMLDivElement>(null);
+
+  const combinedNavRef: TCombinedNavRef = {
+    servicesTypesRef: servicesTypesRef,
+    aboutUsRef: aboutUsRef,
+    priceRef: priceRef,
+    promosRef: promosRef,
+  }
+
   return (
     <div className={appStyles.content}>
-      <Header/>
+      <Header refs={combinedNavRef}/>
       <main>
         <Hero/>
         <div className={appStyles.decor}/>
-        <menu className={appStyles.menu}>
-          <ul className={appStyles.menu__list}>
-            <MenuItem service="Маникюр" url={manicure}/>
-            <MenuItem service="Педикюр" url={pedicure}/>
-            <MenuItem service="Брови" url={eyebrows}/>
-            <MenuItem service="Реснички" url={eyelashes}/>
-          </ul>
+        <menu className={appStyles.menu} ref={servicesTypesRef}>
+          <div className={appStyles.menu__list}>
+            <MenuItem service="Маникюр" url={manicure} ref={manicureRef}/>
+            <MenuItem service="Педикюр" url={pedicure} ref={pedicureRef}/>
+            <MenuItem service="Брови" url={eyebrows} ref={eyebrowsRef}/>
+            <MenuItem service="Реснички" url={eyelashes} ref={eyelashesRef}/>
+          </div>
         </menu>
-        <section className={appStyles.section}>
+        <section className={appStyles.section} ref={aboutUsRef}>
           <h2 className={`${appStyles.section__text} ${appStyles.section__text_heading}`}>О нас</h2>
           <div className={appStyles['about-us']}>
             <p className={appStyles.text}>
               <span className={appStyles.text_color_pink}>In</span><span
               className={appStyles.text_color_lime}>Lime</span> - студия красоты, специализирующаяся на одновременном
-              оказании услуг маникюра, педикюра и наращивании ресничек.
+              оказании услуг маникюра, педикюра, коррекции бровей и наращивании ресничек.
               Клиенты, которые ценят своё время, выбирают нас,
               чтобы за 2.5 часа сделать сразу 2 или 3 услуги.
             </p>
@@ -88,14 +105,14 @@ const App: FunctionComponent = () => {
             }
           </ul>
         </section>
-        <section className={appStyles.section}>
+        <section className={appStyles.section} ref={priceRef}>
           <h2 className={`${appStyles.section__text} ${appStyles.section__text_heading}`}>Стоимость услуг</h2>
-          <Service serviceHeading="Маникюр" servicesList={manicureService} portfolio={manicurePortfolio}/>
-          <Service serviceHeading="Педикюр" servicesList={pedicureService} portfolio={pedicurePortfolio}/>
-          {/*<Service serviceHeading="Брови" servicesList={} portfolio={eyebrowsPortfolio}/>*/}
-          <Service serviceHeading="Реснички" servicesList={eyelashesService} portfolio={eyelashesPortfolio}/>
+          <ServiceType serviceHeading="Маникюр" servicesList={manicureService} portfolio={manicurePortfolio} ref={manicureRef}/>
+          <ServiceType serviceHeading="Педикюр" servicesList={pedicureService} portfolio={pedicurePortfolio} ref={pedicureRef}/>
+          {/*<Service serviceHeading="Брови" servicesList={} portfolio={eyebrowsPortfolio} ref={eyebrowsRef}/>*/}
+          <ServiceType serviceHeading="Реснички" servicesList={eyelashesService} portfolio={eyelashesPortfolio} ref={eyelashesRef}/>
         </section>
-        <section className={appStyles.section}>
+        <section className={appStyles.section} ref={promosRef}>
           <h2 className={`${appStyles.section__text} ${appStyles.section__text_heading}`}>Акции</h2>
           <h3 className={`${appStyles.section__text} ${appStyles.section__text_subheading}`}>
             Специальные предложения от студии красоты <span

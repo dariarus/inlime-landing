@@ -1,0 +1,17 @@
+.nav-item {
+  all: unset;
+  margin: 0;
+  color: #fff;
+  font-family: var( --font-family-helvetica);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: normal;
+  letter-spacing: 0.01em;
+  /*text-align: end;*/
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+}

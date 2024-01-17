@@ -1,5 +1,5 @@
 .menu-item {
-  list-style: none;
+  all: unset;
   margin: 0;
   padding: 20px 10px 10px;
   background-color: var(--color-lime);
@@ -23,7 +23,7 @@
 
 .menu-item__heading {
   margin: 20px 0 0;
-  font-family: var( --font-family-helvetica);
+  font-family: var(--font-family-helvetica);
   font-weight: 700;
   font-size: 15px;
   line-height: normal;

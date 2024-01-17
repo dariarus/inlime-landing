@@ -4,8 +4,10 @@ import headerStyles from './header.module.css';
 import logo from '../../images/logo.png';
 
 import {SocialNetworks} from '../social-networks/social-networks';
+import {NavButton} from '../nav-button/nav-button';
+import {TCombinedNavRef} from '../../services/types';
 
-export const Header: FunctionComponent = () => {
+export const Header: FunctionComponent<{refs: TCombinedNavRef}> = (props) => {
   return (
     <header className={headerStyles.header}>
       <div className={headerStyles.header__wrap}>
@@ -18,22 +20,14 @@ export const Header: FunctionComponent = () => {
         </div>
       </div>
       <div className={headerStyles.header__decor}/>
-      <nav className={headerStyles.navigation}>
-        <ul className={headerStyles.navigation__list}>
-          <li className={headerStyles['navigation__list-item']}>
-            <a href={'#'} className={`${headerStyles.text} ${headerStyles.text_link}`}>О нас</a>
-          </li>
-          <li className={headerStyles['navigation__list-item']}>
-            <a href={'#'} className={`${headerStyles.text} ${headerStyles.text_link}`}>Услуги</a>
-          </li>
-          <li className={headerStyles['navigation__list-item']}>
-            <a href={'#'} className={`${headerStyles.text} ${headerStyles.text_link}`}>Прайс</a>
-          </li>
-          <li className={headerStyles['navigation__list-item']}>
-            <a href={'#'} className={`${headerStyles.text} ${headerStyles.text_link}`}>Акции</a>
-          </li>
-        </ul>
-      </nav>
+      <div className={headerStyles['navigation-wrap']}>
+        <nav className={headerStyles.navigation}>
+          <NavButton tabName="Виды услуг" ref={props.refs.servicesTypesRef}/>
+          <NavButton tabName="О нас" ref={props.refs.aboutUsRef}/>
+          <NavButton tabName="Прайс" ref={props.refs.priceRef}/>
+          <NavButton tabName="Акции" ref={props.refs.promosRef}/>
+        </nav>
+      </div>
     </header>
   )
 }

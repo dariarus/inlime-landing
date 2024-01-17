@@ -1,17 +1,22 @@
-import React, {FunctionComponent} from 'react';
+import React, {forwardRef} from 'react';
 
 import menuItemStyles from './menu-item.module.css';
+import {scrollToSection, useForwardRef} from '../../utils/functions';
 
 type TMenuItemProps = {
   url: string;
   service: string;
 }
 
-export const MenuItem: FunctionComponent<TMenuItemProps> = (props) => {
+export const MenuItem = forwardRef<HTMLDivElement, TMenuItemProps>((props, ref) => {
+  const sectionRef = useForwardRef<HTMLDivElement>(ref);
+
   return (
-    <li className={menuItemStyles['menu-item']}>
+    <button className={menuItemStyles['menu-item']} onClick={() => {
+      scrollToSection(sectionRef.current);
+    }}>
       <img src={props.url} alt={props.service} className={menuItemStyles['menu-item__picture']}/>
       <p className={menuItemStyles['menu-item__heading']}>{props.service}</p>
-    </li>
+    </button>
   )
-}
+})
