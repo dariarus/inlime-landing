@@ -6,8 +6,9 @@ export type TImage = {
 }
 
 export type TCombinedNavRef = {
+  headerRef: RefObject<HTMLDivElement>,
   servicesTypesRef: RefObject<HTMLDivElement>,
   aboutUsRef: RefObject<HTMLDivElement>,
   priceRef: RefObject<HTMLDivElement>
-  promosRef: RefObject<HTMLDivElement>
+  promosRef: RefObject<HTMLDivElement>,
 }

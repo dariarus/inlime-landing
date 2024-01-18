@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useRef, useState} from 'react';
+import React, {FunctionComponent, useEffect, useRef, useState} from 'react';
 
 import appStyles from './app.module.css';
 import manicure from '../../images/manicure/maniqure-1.jpg';
@@ -15,6 +15,13 @@ import promoBirthday from '../../images/promotions/promo_birthday.jpg';
 import {Header} from '../header/header';
 import {Hero} from '../hero/hero';
 import {MenuItem} from '../menu-item/menu-item';
+import {Popup} from '../popup/popup';
+import {ServiceType} from '../service-type/service-type';
+import {Promo} from '../promo/promo';
+import {Button} from '../button/button';
+import {SocialNetworks} from '../social-networks/social-networks';
+import {ToTopButton} from '../to-top-button/to-top-button';
+
 import {
   // eyebrowsPortfolio,
   eyelashesPortfolio,
@@ -25,16 +32,15 @@ import {
   pedicurePortfolio,
   pedicureService
 } from '../../utils/constants';
-import {Popup} from '../popup/popup';
-import {ServiceType} from '../service-type/service-type';
+
 import {TCombinedNavRef, TImage} from '../../services/types';
-import {Promo} from '../promo/promo';
-import {Button} from '../button/button';
-import {SocialNetworks} from '../social-networks/social-networks';
 
 const App: FunctionComponent = () => {
   const [popupIsOpened, setPopupIsOpened] = useState<boolean>(false);
   const [imageToShow, setImageToShow] = useState<TImage>({src: '', index: 0});
+  const [isToTopVisible, setIsToTopVisible] = useState(false);
+
+  const headerRef = useRef<HTMLDivElement>(null);
 
   const servicesTypesRef = useRef<HTMLDivElement>(null);
   const aboutUsRef = useRef<HTMLDivElement>(null);
@@ -47,11 +53,26 @@ const App: FunctionComponent = () => {
   const eyelashesRef = useRef<HTMLDivElement>(null);
 
   const combinedNavRef: TCombinedNavRef = {
+    headerRef: headerRef,
     servicesTypesRef: servicesTypesRef,
     aboutUsRef: aboutUsRef,
     priceRef: priceRef,
     promosRef: promosRef,
   }
+
+  // Обработчик прокрутки страницы
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    // Показывать кнопку "Наверх", если прокрутка больше 200 пикселей
+    setIsToTopVisible(scrollTop > 200);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className={appStyles.content}>
@@ -107,10 +128,13 @@ const App: FunctionComponent = () => {
         </section>
         <section className={appStyles.section} ref={priceRef}>
           <h2 className={`${appStyles.section__text} ${appStyles.section__text_heading}`}>Стоимость услуг</h2>
-          <ServiceType serviceHeading="Маникюр" servicesList={manicureService} portfolio={manicurePortfolio} ref={manicureRef}/>
-          <ServiceType serviceHeading="Педикюр" servicesList={pedicureService} portfolio={pedicurePortfolio} ref={pedicureRef}/>
+          <ServiceType serviceHeading="Маникюр" servicesList={manicureService} portfolio={manicurePortfolio}
+                       ref={manicureRef}/>
+          <ServiceType serviceHeading="Педикюр" servicesList={pedicureService} portfolio={pedicurePortfolio}
+                       ref={pedicureRef}/>
           {/*<Service serviceHeading="Брови" servicesList={} portfolio={eyebrowsPortfolio} ref={eyebrowsRef}/>*/}
-          <ServiceType serviceHeading="Реснички" servicesList={eyelashesService} portfolio={eyelashesPortfolio} ref={eyelashesRef}/>
+          <ServiceType serviceHeading="Реснички" servicesList={eyelashesService} portfolio={eyelashesPortfolio}
+                       ref={eyelashesRef}/>
         </section>
         <section className={appStyles.section} ref={promosRef}>
           <h2 className={`${appStyles.section__text} ${appStyles.section__text_heading}`}>Акции</h2>
@@ -152,8 +176,8 @@ const App: FunctionComponent = () => {
               <a href="https://yandex.ru/maps/org/inlime/106556456544/?utm_medium=mapframe&utm_source=maps"
                  className={`${appStyles.contacts__link} ${appStyles.contacts__link_primary}`}>InLime</a>
               <a
-              href="https://yandex.ru/maps/970/novorossiysk/category/beauty_salon/184105814/?utm_medium=mapframe&utm_source=maps"
-              className={`${appStyles.contacts__link} ${appStyles.contacts__link_secondary}`}></a>
+                href="https://yandex.ru/maps/970/novorossiysk/category/beauty_salon/184105814/?utm_medium=mapframe&utm_source=maps"
+                className={`${appStyles.contacts__link} ${appStyles.contacts__link_secondary}`}></a>
               <iframe
                 src="https://yandex.ru/map-widget/v1/?ll=37.783220%2C44.675963&mode=search&oid=106556456544&ol=biz&z=15.14"
                 className={appStyles.contacts__iframe}
@@ -161,6 +185,10 @@ const App: FunctionComponent = () => {
             </div>
           </div>
         </section>
+        {
+          isToTopVisible &&
+          <ToTopButton ref={headerRef}/>
+        }
         {
           popupIsOpened &&
           <Popup

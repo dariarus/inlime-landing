@@ -1,4 +1,5 @@
 .header {
+
 }
 
 .header__wrap {
@@ -36,7 +37,7 @@
   background-color: var(--color-white);
 }
 
-.navigation-wrap {
+.header__navigation-wrap {
   display: flex;
   justify-content: center;
 }
@@ -47,10 +48,4 @@
   margin: 0;
   padding: 1.5em 0 1em;
   min-width: 50%;
-}
-
-.navigation__list-item {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
