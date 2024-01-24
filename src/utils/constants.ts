@@ -172,6 +172,21 @@ export const pedicureService = [
   },
 ];
 
+export const eyebrowsService = [
+  {
+    serviceName: "Коррекция бровей без окрашивания",
+    servicePrice: "490 Р"
+  },
+  {
+    serviceName: "Коррекция бровей с окрашиванием",
+    servicePrice: "890 Р"
+  },
+  {
+    serviceName: "Ламинирование бровей",
+    servicePrice: "1490 Р"
+  },
+];
+
 export const eyelashesService = [
   {
     serviceName: "2D",

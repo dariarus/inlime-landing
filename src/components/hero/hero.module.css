@@ -12,7 +12,8 @@
   align-items: center;
   padding-top: 50px;
   min-width: 100%;
-  background: url(../../images/background-image.png) 0 95% / 13% no-repeat,
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .5), rgba(0, 0, 0, .7)),
+  url(../../images/background-image.png) 0 95% / 13% no-repeat,
   url(../../images/background-image.png) 15% 7% / 5% no-repeat,
   url(../../images/background-image.png) 25% 30% / 3% no-repeat,
   url(../../images/background-image.png) 30% 90% / 4% no-repeat,

@@ -23,7 +23,8 @@ import {SocialNetworks} from '../social-networks/social-networks';
 import {ToTopButton} from '../to-top-button/to-top-button';
 
 import {
-  // eyebrowsPortfolio,
+  eyebrowsService,
+  eyebrowsPortfolio,
   eyelashesPortfolio,
   eyelashesService,
   galleryPictures,
@@ -132,7 +133,8 @@ const App: FunctionComponent = () => {
                        ref={manicureRef}/>
           <ServiceType serviceHeading="Педикюр" servicesList={pedicureService} portfolio={pedicurePortfolio}
                        ref={pedicureRef}/>
-          {/*<Service serviceHeading="Брови" servicesList={} portfolio={eyebrowsPortfolio} ref={eyebrowsRef}/>*/}
+          <ServiceType serviceHeading="Брови" servicesList={eyebrowsService} portfolio={eyebrowsPortfolio}
+                       ref={eyebrowsRef}/>
           <ServiceType serviceHeading="Реснички" servicesList={eyelashesService} portfolio={eyelashesPortfolio}
                        ref={eyelashesRef}/>
         </section>
