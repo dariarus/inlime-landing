@@ -24,14 +24,12 @@
   url(../../images/background-image.png) 80% 80% / 3% no-repeat,
   url(../../images/background-image.png) 90% 35% / 9% no-repeat,
   url(../../images/background-image.png) 95% 77% / 6% no-repeat,
-  url(../../images/background-image.png) 95% 77% / 6% no-repeat,
   url(../../images/background-image.png) 98% 3% / 6% no-repeat;
 }
 
 .info__description {
   display: flex;
   flex-direction: column;
-  /*justify-content: space-between;*/
 }
 
 .text {

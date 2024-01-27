@@ -24,3 +24,8 @@ export const scrollToSection = (element: HTMLDivElement | null): void => {
     element.scrollIntoView({behavior: "smooth", block: "start"});
   }
 }
+
+export const getWindowWidth = () => {
+  const {innerWidth} = window;
+  return {innerWidth};
+}

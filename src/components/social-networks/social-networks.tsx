@@ -25,3 +25,4 @@ export const SocialNetworks: FunctionComponent = () => {
     </div>
   )
 }
+

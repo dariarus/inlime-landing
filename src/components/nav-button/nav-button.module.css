@@ -2,11 +2,11 @@
   all: unset;
   margin: 0;
   color: #fff;
-  font-family: var( --font-family-helvetica);
+  font-family: var(--font-family-helvetica);
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 1.1em;
   line-height: normal;
   letter-spacing: 0.01em;
   cursor: pointer;
@@ -14,4 +14,16 @@
 
 .nav-item:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+  .nav-item {
+    font-size: .9em;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .nav-item {
+    font-size: .8em;
+  }
 }

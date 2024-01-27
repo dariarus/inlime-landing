@@ -14,7 +14,6 @@ export const Hero: FunctionComponent = () => {
     <section className={heroStyles.hero}>
       <ScaleText/>
       <div className={heroStyles.info}>
-        {/*<div className={heroStyles.info__description}>*/}
         <h1 className={`${heroStyles.text} ${heroStyles.text_header} ${heroStyles.text_main}`}><span
           className={`${heroStyles.text} ${heroStyles.text_uppercase}`}><span
           className={`${heroStyles.text} ${heroStyles.text_color_pink}`}>In</span><span
@@ -25,12 +24,9 @@ export const Hero: FunctionComponent = () => {
           как по отдельности, так и комплексом
           в 4 или 6 рук на удобном кресле-реклайнере</p>
         <Button color="lime"/>
-        {/*</div>*/}
-        {/*<div className={heroStyles.info__contacts}>*/}
         <PlaceInfo text="+7 (964) 893-23-68" background={whatsAppIcon} bgParams="0 top / 20%"/>
         <PlaceInfo text="Время работы: 9:00-21:00" background={openingHours} bgParams="0 50% / 15%"/>
         <PlaceInfo text="г. Новороссийск, 15 мкр-н, ул Южная, 9" background={addressIcon} bgParams="0 50% / 15%"/>
-        {/*</div>*/}
       </div>
     </section>
   )

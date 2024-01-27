@@ -33,6 +33,7 @@ import {
   pedicurePortfolio,
   pedicureService
 } from '../../utils/constants';
+import {getWindowWidth} from '../../utils/functions';
 
 import {TCombinedNavRef, TImage} from '../../services/types';
 
@@ -40,6 +41,18 @@ const App: FunctionComponent = () => {
   const [popupIsOpened, setPopupIsOpened] = useState<boolean>(false);
   const [imageToShow, setImageToShow] = useState<TImage>({src: '', index: 0});
   const [isToTopVisible, setIsToTopVisible] = useState(false);
+  const [screenWidth, setScreenWidth] = useState<{innerWidth: number}>(getWindowWidth());
+
+  // const isMobileDevice = screenWidth.innerWidth > 715;
+
+  useEffect(() => {
+    const handleScreenWidth = () => setScreenWidth(getWindowWidth())
+
+    window.addEventListener('resize', handleScreenWidth);
+    return () => {
+      window.removeEventListener('resize', handleScreenWidth);
+    };
+  }, [screenWidth.innerWidth])
 
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -77,7 +90,7 @@ const App: FunctionComponent = () => {
 
   return (
     <div className={appStyles.content}>
-      <Header refs={combinedNavRef}/>
+      <Header refs={combinedNavRef} windowWidth={screenWidth.innerWidth}/>
       <main>
         <Hero/>
         <div className={appStyles.decor}/>

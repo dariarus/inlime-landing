@@ -1,6 +1,5 @@
 .social-networks {
   display: flex;
-  align-items: center;
 }
 
 .social-networks__link {
@@ -19,4 +18,17 @@
   height: 38px;
   object-fit: contain;
   object-position: center;
+}
+
+@media screen and (max-width: 810px) {
+  .social-networks {
+    justify-content: flex-end;
+    margin-bottom: .5em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .social-networks {
+    justify-content: center;
+  }
 }
