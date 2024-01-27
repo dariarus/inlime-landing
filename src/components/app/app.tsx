@@ -92,7 +92,7 @@ const App: FunctionComponent = () => {
     <div className={appStyles.content}>
       <Header refs={combinedNavRef} windowWidth={screenWidth.innerWidth}/>
       <main>
-        <Hero/>
+        <Hero windowWidth={screenWidth.innerWidth}/>
         <div className={appStyles.decor}/>
         <menu className={appStyles.menu} ref={servicesTypesRef}>
           <div className={appStyles.menu__list}>
@@ -159,7 +159,7 @@ const App: FunctionComponent = () => {
             className={`${appStyles.text} ${appStyles.text_color_lime}`}>Lime</span>
           </h3>
           <div className={appStyles.promotions}>
-            <Promo promoImage={promoClientDay} heading="Клиентский день! -20% руб на все услуги"
+            <Promo promoImage={promoClientDay} heading="Клиентский день! -20% на все услуги"
                    description="Предложение актуально при записи на 20 число каждого месяца"/>
             <Promo promoImage={promoFirstVisit} heading="Знакомство с InLime! -300 руб на любые услуги"
                    description="Предложение актуально для клиентов, которые впервые записываются в студию"/>

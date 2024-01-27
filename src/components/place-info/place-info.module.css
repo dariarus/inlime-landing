@@ -1,5 +1,4 @@
 .content {
-  padding-left: 100px;
   background-size: initial;
 }
 
@@ -12,4 +11,10 @@
   line-height: normal;
   color: var(--color-white);
   text-align: center;
+}
+
+@media screen and (max-width: 710px) {
+  .text {
+    font-size: 22px;
+  }
 }
