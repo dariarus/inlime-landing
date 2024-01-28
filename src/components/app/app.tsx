@@ -96,10 +96,10 @@ const App: FunctionComponent = () => {
         <div className={appStyles.decor}/>
         <menu className={appStyles.menu} ref={servicesTypesRef}>
           <div className={appStyles.menu__list}>
-            <MenuItem service="Маникюр" url={manicure} ref={manicureRef}/>
-            <MenuItem service="Педикюр" url={pedicure} ref={pedicureRef}/>
-            <MenuItem service="Брови" url={eyebrows} ref={eyebrowsRef}/>
-            <MenuItem service="Реснички" url={eyelashes} ref={eyelashesRef}/>
+            <MenuItem service="Маникюр" url={manicure} ref={manicureRef} windowWidth={screenWidth.innerWidth}/>
+            <MenuItem service="Педикюр" url={pedicure} ref={pedicureRef} windowWidth={screenWidth.innerWidth}/>
+            <MenuItem service="Брови" url={eyebrows} ref={eyebrowsRef} windowWidth={screenWidth.innerWidth}/>
+            <MenuItem service="Реснички" url={eyelashes} ref={eyelashesRef} windowWidth={screenWidth.innerWidth}/>
           </div>
         </menu>
         <section className={appStyles.section} ref={aboutUsRef}>

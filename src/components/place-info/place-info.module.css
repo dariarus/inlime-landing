@@ -13,7 +13,7 @@
   text-align: center;
 }
 
-@media screen and (max-width: 710px) {
+@media screen and (max-width: 712px) {
   .text {
     font-size: 22px;
   }

@@ -29,7 +29,7 @@ export const Hero: FunctionComponent<{ windowWidth: number }> = (props) => {
           как по отдельности, так и комплексом
           в 4 или 6 рук на удобном кресле-реклайнере</p>
         {
-          props.windowWidth > 710
+          props.windowWidth > 712
             ? <>
               <Button color="lime"/>
               <PlaceInfo text="+7 (964) 893-23-68" background={whatsAppIcon}
@@ -46,7 +46,6 @@ export const Hero: FunctionComponent<{ windowWidth: number }> = (props) => {
               <Button color="lime"/>
             </>
         }
-
       </div>
     </section>
   )
