@@ -21,3 +21,15 @@
   margin: 40px auto 0;
   max-width: min-content;
 }
+
+@media screen and (max-width: 780px) {
+  .service-content {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .service-content__heading {
+    font-size: 28px;
+  }
+}

@@ -52,7 +52,14 @@ const App: FunctionComponent = () => {
     return () => {
       window.removeEventListener('resize', handleScreenWidth);
     };
-  }, [screenWidth.innerWidth])
+  }, [screenWidth.innerWidth]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -80,13 +87,6 @@ const App: FunctionComponent = () => {
     // Показывать кнопку "Наверх", если прокрутка больше 200 пикселей
     setIsToTopVisible(scrollTop > 200);
   };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
     <div className={appStyles.content}>
@@ -143,13 +143,13 @@ const App: FunctionComponent = () => {
         <section className={appStyles.section} ref={priceRef}>
           <h2 className={`${appStyles.section__text} ${appStyles.section__text_heading}`}>Стоимость услуг</h2>
           <ServiceType serviceHeading="Маникюр" servicesList={manicureService} portfolio={manicurePortfolio}
-                       ref={manicureRef}/>
+                       ref={manicureRef} windowWidth={screenWidth.innerWidth}/>
           <ServiceType serviceHeading="Педикюр" servicesList={pedicureService} portfolio={pedicurePortfolio}
-                       ref={pedicureRef}/>
+                       ref={pedicureRef} windowWidth={screenWidth.innerWidth}/>
           <ServiceType serviceHeading="Брови" servicesList={eyebrowsService} portfolio={eyebrowsPortfolio}
-                       ref={eyebrowsRef}/>
+                       ref={eyebrowsRef} windowWidth={screenWidth.innerWidth}/>
           <ServiceType serviceHeading="Реснички" servicesList={eyelashesService} portfolio={eyelashesPortfolio}
-                       ref={eyelashesRef}/>
+                       ref={eyelashesRef} windowWidth={screenWidth.innerWidth}/>
         </section>
         <section className={appStyles.section} ref={promosRef}>
           <h2 className={`${appStyles.section__text} ${appStyles.section__text_heading}`}>Акции</h2>
@@ -200,10 +200,10 @@ const App: FunctionComponent = () => {
             </div>
           </div>
         </section>
-        {
-          isToTopVisible &&
-          <ToTopButton ref={headerRef}/>
-        }
+        {/*{*/}
+        {/*  isToTopVisible &&*/}
+        {/*  <ToTopButton ref={headerRef}/>*/}
+        {/*}*/}
         {
           popupIsOpened &&
           <Popup

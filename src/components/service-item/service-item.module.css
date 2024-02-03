@@ -1,7 +1,7 @@
 .item {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0 20px;
+  padding: 20px 0;
   border-bottom: 2px solid var(--color-white);
 }
 
@@ -17,4 +17,34 @@
   line-height: normal;
   letter-spacing: .01em;
   color: var(--color-white);
+}
+
+.text_responsive {
+
+}
+
+@media screen and (max-width: 740px) {
+  .text {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .item {
+    padding: 10px 0;
+  }
+  
+  .text {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .item {
+    align-items: center;
+  }
+  
+  .text_responsive {
+    max-width: 230px;
+  }
 }
