@@ -1,5 +1,6 @@
 .service-content {
   margin-bottom: 60px;
+  padding: 0 10px;
 }
 
 .service-content:last-of-type {
@@ -20,12 +21,6 @@
 .service-content__button-wrap {
   margin: 40px auto 0;
   max-width: min-content;
-}
-
-@media screen and (max-width: 780px) {
-  .service-content {
-    padding: 0 10px;
-  }
 }
 
 @media screen and (max-width: 780px) {

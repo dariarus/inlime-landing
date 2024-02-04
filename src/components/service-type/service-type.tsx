@@ -25,7 +25,7 @@ export const ServiceType = forwardRef<HTMLDivElement, TService>((props, ref) => 
       <div className={serviceStyles['service-content__button-wrap']}>
         <Button color="pink"/>
       </div>
-      <Slider picturesArray={props.portfolio}/>
+      <Slider picturesArray={props.portfolio} windowWidth={props.windowWidth}/>
     </div>
   )
 })

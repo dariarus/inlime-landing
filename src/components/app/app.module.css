@@ -203,9 +203,9 @@
 }
 
 @media screen and (max-width: 1010px) {
-  .content {
-    max-width: 767px;
-  }
+  /*.content {*/
+  /*  max-width: max-content;*/
+  /*}*/
   
   .menu {
     padding: 40px 10px;
@@ -273,9 +273,9 @@
 }
 
 @media screen and (max-width: 480px) {
-  .content {
-    max-width: 479px;
-  }
+  /*.content {*/
+  /*  max-width: 479px;*/
+  /*}*/
 }
 
 @media screen and (max-width: 440px) {
@@ -292,9 +292,9 @@
 }
 
 @media screen and (max-width: 320px) {
-  .content {
-    max-width: 319px;
-  }
+  /*.content {*/
+  /*  max-width: 319px;*/
+  /*}*/
 }
 
 /*@media screen and (max-width: 1200px) {*/
