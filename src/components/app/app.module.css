@@ -89,6 +89,12 @@
   text-decoration: none;
 }
 
+.text_link:focus,
+.text_link:active {
+  color: #8e1c8e;
+  text-decoration: underline;
+}
+
 .text_color_lime {
   color: var(--color-lime);
 }

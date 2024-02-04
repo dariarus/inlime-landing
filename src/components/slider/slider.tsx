@@ -7,6 +7,7 @@ import 'swiper/css/pagination';
 
 import sliderStyles from './slider.module.css';
 import './swiper.css';
+import '../../style.css';
 
 import {Popup} from '../popup/popup';
 
@@ -35,6 +36,16 @@ export const Slider: FunctionComponent<TSlider> = (props) => {
   // Максимально возможный activeIndex, с учетом того, что последний сдвиг происходит без 10px gap-а
   const maxIndex = (fullElementsArrayWidthInPx - widthOfOuterSliderWindow - gapBetweenSliderElements) / translateWidth
 
+  const handleOnOpenPopup = () => {
+    setPopupIsOpened(true);
+    document.body.classList.add('bodyOverlay');
+  }
+
+  const handleOnClosePopup = () => {
+    setPopupIsOpened(false);
+    document.body.classList.remove('bodyOverlay');
+  }
+
   return (
     <>
       <div className={sliderStyles.slider}>
@@ -57,7 +68,7 @@ export const Slider: FunctionComponent<TSlider> = (props) => {
                     props.picturesArray.map((picture, index) => (
                       <li key={index} className={sliderStyles.slider__item}
                           onClick={() => {
-                            setPopupIsOpened(true);
+                            handleOnOpenPopup();
                             setImageToShow({src: picture, index: index})
                           }}
                       >
@@ -97,7 +108,7 @@ export const Slider: FunctionComponent<TSlider> = (props) => {
               {
                 props.picturesArray.map((picture, index) => (
                   <SwiperSlide key={index} onClick={() => {
-                    setPopupIsOpened(true);
+                    handleOnOpenPopup();
                     setImageToShow({src: picture, index: index})
                   }}>
                     <img src={picture} alt="Пример работы" className={sliderStyles.slider__picture}/>
@@ -115,7 +126,7 @@ export const Slider: FunctionComponent<TSlider> = (props) => {
           imageToShow={imageToShow}
           imagesList={props.picturesArray}
           setImageToShow={setImageToShow}
-          onClosePopup={() => setPopupIsOpened(false)}
+          onClosePopup={handleOnClosePopup}
         />
       }
     </>

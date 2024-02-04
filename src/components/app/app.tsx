@@ -1,6 +1,8 @@
 import React, {FunctionComponent, useEffect, useRef, useState} from 'react';
 
 import appStyles from './app.module.css';
+import '../../style.css';
+
 import manicure from '../../images/manicure/maniqure-1.jpg';
 import pedicure from '../../images/pedicure/pedicure-2.jpg';
 import eyebrows from '../../images/eyebrows/eyebrows-5.jpg';
@@ -44,8 +46,6 @@ const App: FunctionComponent = () => {
   const [isToTopVisible, setIsToTopVisible] = useState(false);
   const [screenWidth, setScreenWidth] = useState<{ innerWidth: number }>(getWindowWidth());
 
-  // const isMobileDevice = screenWidth.innerWidth > 715;
-
   useEffect(() => {
     const handleScreenWidth = () => setScreenWidth(getWindowWidth())
 
@@ -88,6 +88,16 @@ const App: FunctionComponent = () => {
     // Показывать кнопку "Наверх", если прокрутка больше 200 пикселей
     setIsToTopVisible(scrollTop > 200);
   };
+
+  const handleOnOpenPopup = () => {
+    setPopupIsOpened(true);
+    document.body.classList.add('bodyOverlay');
+  }
+
+  const handleOnClosePopup = () => {
+    setPopupIsOpened(false);
+    document.body.classList.remove('bodyOverlay');
+  }
 
   return (
     <div className={appStyles.content}>
@@ -133,8 +143,8 @@ const App: FunctionComponent = () => {
             {
               galleryPictures.map((picture, index) => (
                 <li key={index} className={appStyles['gallery-item']} onClick={() => {
-                  setPopupIsOpened(true);
-                  setImageToShow({src: picture, index: index})
+                  setImageToShow({src: picture, index: index});
+                  handleOnOpenPopup();
                 }}>
                   <img src={picture} alt="Фото для галереи" className={appStyles['gallery-item__picture']}/>
                 </li>
@@ -226,7 +236,7 @@ const App: FunctionComponent = () => {
             imagesList={galleryPictures}
             imageToShow={imageToShow}
             setImageToShow={setImageToShow}
-            onClosePopup={() => setPopupIsOpened(false)}
+            onClosePopup={handleOnClosePopup}
           />
         }
       </main>

@@ -17,6 +17,7 @@
   line-height: normal;
   letter-spacing: .01em;
   color: var(--color-white);
+  text-align: left;
 }
 
 .text_responsive {
@@ -39,7 +40,7 @@
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 440px) {
   .item {
     align-items: center;
   }

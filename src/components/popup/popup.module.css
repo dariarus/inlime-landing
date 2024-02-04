@@ -28,6 +28,7 @@
 }
 
 .popup-button_arrow {
+  /* 50% - половина от высоты экрана, 150px - это высота кнопки, 2 - чтобы кнопка была посередине картинки */
   top: calc(50% - 150px / 2);
   width: 50px;
   height: 150px;
@@ -48,8 +49,55 @@
 }
 
 .image {
-  max-width: 100%;
+  width: 100%;
   max-height: inherit;
   object-fit: cover;
   object-position: top center;
+}
+
+@media screen and (max-width: 720px) {
+  .popup {
+    min-width: 75%;
+  }
+  
+  .popup-button:not(:disabled):hover {
+    transform: none;
+  }
+  
+  .popup-button_cross {
+    top: 0;
+    right: -10%;
+  }
+  
+  .popup-button_arrow_left {
+    left: -10%;
+  }
+  .popup-button_arrow_right {
+    right: -10%;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .popup {
+    min-width: 85%;
+  }
+  
+  .popup-button_cross {
+    top: -10%;
+    right: 0;
+  }
+  
+  .popup-button_arrow {
+    top: calc(50% - 50px / 2);
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .5);
+  }
+  
+  .popup-button_arrow_left {
+    left: 2%;
+  }
+  .popup-button_arrow_right {
+    right: 2%;
+  }
 }
