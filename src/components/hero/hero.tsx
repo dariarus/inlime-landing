@@ -39,8 +39,9 @@ export const Hero: FunctionComponent<{ windowWidth: number }> = (props) => {
             </>
             : <>
               <PlaceInfo text="+7 (964) 893-23-68" isMarginNeeded={false}/>
-              <PlaceInfo text="Время работы: 9:00-21:00" isMarginNeeded={false}/>
-              <PlaceInfo text="г. Новороссийск, 15 мкр-н, ул Южная, 9" isMarginNeeded={true}/>
+              <PlaceInfo text={["Время работы:", <br/>, "9:00-21:00"]}
+                         isMarginNeeded={false}/>
+              <PlaceInfo text={["г. Новороссийск,", <br/>, "15 мкр-н, ул Южная, 9"]} isMarginNeeded={true}/>
               <Button color="lime"/>
             </>
         }

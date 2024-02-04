@@ -15,18 +15,18 @@
   min-width: 100%;
   min-height: 100%;
   background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .5), rgba(0, 0, 0, .7)),
-  url(../../images/background-image.png) 0 95% / 13% no-repeat,
-  url(../../images/background-image.png) 15% 7% / 5% no-repeat,
-  url(../../images/background-image.png) 25% 30% / 3% no-repeat,
-  url(../../images/background-image.png) 30% 90% / 4% no-repeat,
-  url(../../images/background-image.png) 40% 80% / 7% no-repeat,
-  url(../../images/background-image.png) 40% 15% / 10% no-repeat,
-  url(../../images/background-image.png) 60% 75% / 11% no-repeat,
-  url(../../images/background-image.png) 60% 30% / 5% no-repeat,
-  url(../../images/background-image.png) 80% 80% / 3% no-repeat,
-  url(../../images/background-image.png) 90% 35% / 9% no-repeat,
-  url(../../images/background-image.png) 95% 77% / 6% no-repeat,
-  url(../../images/background-image.png) 98% 3% / 6% no-repeat;
+  url(../../images/lime.png) 0 95% / 13% no-repeat,
+  url(../../images/lime.png) 15% 7% / 5% no-repeat,
+  url(../../images/lime.png) 25% 30% / 3% no-repeat,
+  url(../../images/lime.png) 30% 90% / 4% no-repeat,
+  url(../../images/lime.png) 40% 80% / 7% no-repeat,
+  url(../../images/lime.png) 40% 15% / 10% no-repeat,
+  url(../../images/lime.png) 60% 75% / 11% no-repeat,
+  url(../../images/lime.png) 60% 30% / 5% no-repeat,
+  url(../../images/lime.png) 80% 80% / 3% no-repeat,
+  url(../../images/lime.png) 90% 35% / 9% no-repeat,
+  url(../../images/lime.png) 95% 77% / 6% no-repeat,
+  url(../../images/lime.png) 98% 3% / 6% no-repeat;
 }
 
 .info__description {

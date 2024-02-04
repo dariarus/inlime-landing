@@ -205,7 +205,10 @@ const App: FunctionComponent = () => {
           <div className={appStyles.contacts}>
             <SocialNetworks/>
             <p className={`${appStyles.text} ${appStyles.text_contacts}`}>+7 (964) 893-23-68</p>
-            <p className={`${appStyles.text} ${appStyles.text_contacts}`}>г. Новороссийск, 15 мкр-н, ул Южная, 9</p>
+            <p className={`${appStyles.text} ${appStyles.text_contacts}`}>
+              г. Новороссийск, 15 мкр-н,
+              {screenWidth.innerWidth < 425 && <br/>}&#160;
+              ул Южная, 9</p>
             {
               screenWidth.innerWidth > 595
                 ? <div className={appStyles.contacts__map}>

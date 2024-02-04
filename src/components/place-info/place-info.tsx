@@ -3,7 +3,7 @@ import React, {FunctionComponent} from 'react';
 import placeInfoStyles from './place-info.module.css';
 
 type TPlaceInfoProps = {
-  text: string;
+  text: string | any; // any нужен, чтобы пропихнуть тег <br/>, когда нужен перенос строки в середине текста
   isMarginNeeded: boolean;
   background?: string;
   bgParams?: string;

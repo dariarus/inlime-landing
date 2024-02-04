@@ -42,7 +42,7 @@ export const Header: FunctionComponent<THeader> = (props) => {
       <div className={headerStyles.header__decor}/>
       <div className={headerStyles['header__navigation-wrap']}>
         <nav className={headerStyles.navigation}>
-          <NavButton tabName="Виды услуг" ref={props.refs.servicesTypesRef}/>
+          <NavButton tabName="Услуги" ref={props.refs.servicesTypesRef}/>
           <NavButton tabName="О нас" ref={props.refs.aboutUsRef}/>
           <NavButton tabName="Прайс" ref={props.refs.priceRef}/>
           <NavButton tabName="Акции" ref={props.refs.promosRef}/>
