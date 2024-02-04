@@ -1,0 +1,103 @@
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 700px;
+  max-height: 500px;
+  z-index: 4;
+  transform: translate(-50%, -50%);
+}
+
+.popup-button {
+  all: unset;
+  position: absolute;
+  cursor: pointer;
+  transition: transform .2s ease;
+}
+
+.popup-button:not(:disabled):hover {
+  transform: scale(1.5, 1.5);
+}
+
+.popup-button_cross {
+  top: -5%;
+  right: -10%;
+  width: 20px;
+  height: 20px;
+  background: url(../../images/cross.svg) center center no-repeat;
+}
+
+.popup-button_arrow {
+  /* 50% - половина от высоты экрана, 150px - это высота кнопки, 2 - чтобы кнопка была посередине картинки */
+  top: calc(50% - 150px / 2);
+  width: 50px;
+  height: 150px;
+}
+
+.popup-button_arrow:disabled {
+  display: none;
+}
+
+.popup-button_arrow_left {
+  left: -20%;
+  background: url(../../images/arrow-left.svg) center center no-repeat;
+}
+
+.popup-button_arrow_right {
+  right: -20%;
+  background: url(../../images/arrow-right.svg) center center no-repeat;
+}
+
+.image {
+  width: 100%;
+  max-height: inherit;
+  object-fit: cover;
+  object-position: top center;
+}
+
+@media screen and (max-width: 720px) {
+  .popup {
+    min-width: 75%;
+  }
+  
+  .popup-button:not(:disabled):hover {
+    transform: none;
+  }
+  
+  .popup-button_cross {
+    top: 0;
+    right: -10%;
+  }
+  
+  .popup-button_arrow_left {
+    left: -10%;
+  }
+  .popup-button_arrow_right {
+    right: -10%;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .popup {
+    min-width: 85%;
+  }
+  
+  .popup-button_cross {
+    top: -10%;
+    right: 0;
+  }
+  
+  .popup-button_arrow {
+    top: calc(50% - 50px / 2);
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .5);
+  }
+  
+  .popup-button_arrow_left {
+    left: 2%;
+  }
+  .popup-button_arrow_right {
+    right: 2%;
+  }
+}

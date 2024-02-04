@@ -1,0 +1,51 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 2px solid var(--color-white);
+}
+
+.item:first-of-type {
+  padding-top: 0;
+}
+
+.text {
+  margin: 0;
+  font-family: var(--font-family-oswald);
+  font-weight: 400;
+  font-size: 25px;
+  line-height: normal;
+  letter-spacing: .01em;
+  color: var(--color-white);
+  text-align: left;
+}
+
+.text_responsive {
+
+}
+
+@media screen and (max-width: 740px) {
+  .text {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .item {
+    padding: 10px 0;
+  }
+  
+  .text {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .item {
+    align-items: center;
+  }
+  
+  .text_responsive {
+    max-width: 230px;
+  }
+}

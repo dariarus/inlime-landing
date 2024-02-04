@@ -1,0 +1,29 @@
+.service-content {
+  margin-bottom: 60px;
+}
+
+.service-content:last-of-type {
+  margin-bottom: 0;
+}
+
+.service-content__heading {
+  margin: 0 0 10px;
+  text-align: center;
+  font-family: var(--font-family-oswald);
+  font-weight: 400;
+  font-size: 35px;
+  line-height: normal;
+  letter-spacing: .01em;
+  color: var(--color-white);
+}
+
+.service-content__button-wrap {
+  margin: 40px auto 0;
+  max-width: min-content;
+}
+
+@media screen and (max-width: 780px) {
+  .service-content__heading {
+    font-size: 28px;
+  }
+}

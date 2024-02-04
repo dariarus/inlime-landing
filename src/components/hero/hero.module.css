@@ -1,0 +1,107 @@
+.hero {
+  padding-bottom: 50px;
+  min-height: max-content;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
+  grid-auto-flow: column;
+  gap: 50px 10%;
+  align-items: center;
+  box-sizing: border-box;
+  padding-top: 50px;
+  min-width: 100%;
+  min-height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .5), rgba(0, 0, 0, .7)),
+  url(../../images/lime.png) 0 95% / 13% no-repeat,
+  url(../../images/lime.png) 15% 7% / 5% no-repeat,
+  url(../../images/lime.png) 25% 30% / 3% no-repeat,
+  url(../../images/lime.png) 30% 90% / 4% no-repeat,
+  url(../../images/lime.png) 40% 80% / 7% no-repeat,
+  url(../../images/lime.png) 40% 15% / 10% no-repeat,
+  url(../../images/lime.png) 60% 75% / 11% no-repeat,
+  url(../../images/lime.png) 60% 30% / 5% no-repeat,
+  url(../../images/lime.png) 80% 80% / 3% no-repeat,
+  url(../../images/lime.png) 90% 35% / 9% no-repeat,
+  url(../../images/lime.png) 95% 77% / 6% no-repeat,
+  url(../../images/lime.png) 98% 3% / 6% no-repeat;
+}
+
+.info__description {
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  margin: 0;
+  color: #fff;
+}
+
+.text_main {
+  font-family: var(--font-family-oswald);
+  font-weight: 400;
+  line-height: normal;
+}
+
+.text_header {
+  font-size: 43px;
+}
+
+.text_paragraph {
+  font-family: var(--font-family-helvetica);
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.text_uppercase {
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+
+.text_color_pink {
+  color: var(--color-pink);
+}
+
+.text_color_green {
+  color: var(--color-lime);
+}
+
+.info__contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 820px) {
+  .hero {
+    padding: 0 1em 1em;
+  }
+  
+  .info {
+    gap: 1em;
+    padding-top: 1.5em;
+  }
+  
+  .text_header {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 712px) {
+  .info {
+    display: flex;
+    flex-direction: column;
+    background: none;
+  }
+  
+  .text_header {
+    text-align: center;
+  }
+  
+  .text_paragraph {
+    margin-bottom: 1em;
+    font-size: 18px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,26 @@
+.button {
+  all: unset;
+  padding: 10px 47px;
+  width: min-content;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  font-family: var(--font-family-helvetica);
+  font-weight: 700;
+  font-size: 17px;
+  line-height: normal;
+  color: var(--text-secondary-color);
+  cursor: pointer;
+  transition: background-color .5s;
+}
+
+.button:hover {
+  background-color: #fff;
+}
+
+.button_color_lime {
+  background: var(--color-lime);
+}
+
+.button_color_pink {
+  background: var(--color-pink);
+}
