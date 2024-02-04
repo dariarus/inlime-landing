@@ -35,3 +35,39 @@
   font-family: var(--font-family-helvetica);
   font-size: 20px;
 }
+
+@media screen and (max-width: 795px) {
+  .card {
+    max-width: 185px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .card {
+    max-width: 242px;
+  }
+}
+
+/*@media screen and (max-width: 1200px) {*/
+
+/*}*/
+
+/*@media screen and (max-width: 992px) {*/
+
+/*}*/
+
+/*@media screen and (max-width: 768px) {*/
+
+/*}*/
+
+/*@media screen and (max-width: 650px) {*/
+
+/*}*/
+
+/*@media screen and (max-width: 480px) {*/
+
+/*}*/
+
+/*@media screen and (max-width: 320px) {*/
+
+/*}*/

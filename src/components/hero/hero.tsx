@@ -5,14 +5,12 @@ import whatsAppIcon from '../../images/whatsApp-icon.png';
 import openingHoursIcon from '../../images/opening-hours-icon.png';
 import addressIcon from '../../images/address-icon.png';
 
-import {ScaleText} from '../scale-text/scale-text';
 import {PlaceInfo} from '../place-info/place-info';
 import {Button} from '../button/button';
 
 export const Hero: FunctionComponent<{ windowWidth: number }> = (props) => {
   return (
     <section className={heroStyles.hero}>
-      <ScaleText windowWidth={props.windowWidth}/>
       <div className={heroStyles.info}>
         <h1 className={`${heroStyles.text} ${heroStyles.text_header} ${heroStyles.text_main}`}><span
           className={`${heroStyles.text} ${heroStyles.text_uppercase}`}><span

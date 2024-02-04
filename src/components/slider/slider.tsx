@@ -75,49 +75,38 @@ export const Slider: FunctionComponent<TSlider> = (props) => {
                 onClick={() => setActiveIndex(Math.min(activeIndex + 1, maxIndex))}
               />
             </>
-            : <>
-              <Swiper
-                slidesPerView={1}
-                spaceBetween={15}
-                modules={[Pagination]}
-                pagination={{
-                  // el: '.swiper-custom-pagination'
-                  clickable: true,
-                }}
-                style={{
-                  // "--swiper-pagination-bottom": "-10%",
-                  //   "--swiper-pagination-color": "#FFBA08",
-                  //   "--swiper-pagination-bullet-inactive-color": "#999999",
-                  //   "--swiper-pagination-bullet-inactive-opacity": "1",
-                  //   "--swiper-pagination-bullet-size": "16px",
-                  //   "--swiper-pagination-bullet-horizontal-gap": "6px"
-                }}
-                breakpoints={{
-                  468: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                  },
-                  640: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                  },
-                }}
-                className="mySwiper"
-              >
-                {
-                  props.picturesArray.map((picture, index) => (
-                    <SwiperSlide key={index} onClick={() => {
-                      setPopupIsOpened(true);
-                      setImageToShow({src: picture, index: index})
-                    }}>
-                      <img src={picture} alt="Пример работы" className={sliderStyles.slider__picture}/>
-                    </SwiperSlide>
-                  ))
-                }
-                <div style={{width: "100%", height: "30px", zIndex: "-5"}}/>
-              </Swiper>
-
-            </>
+            : <Swiper
+              slidesPerView={1}
+              spaceBetween={15}
+              modules={[Pagination]}
+              pagination={{
+                clickable: false,
+              }}
+              breakpoints={{
+                468: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                640: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                },
+              }}
+              className="swiper"
+            >
+              {
+                props.picturesArray.map((picture, index) => (
+                  <SwiperSlide key={index} onClick={() => {
+                    setPopupIsOpened(true);
+                    setImageToShow({src: picture, index: index})
+                  }}>
+                    <img src={picture} alt="Пример работы" className={sliderStyles.slider__picture}/>
+                  </SwiperSlide>
+                ))
+              }
+              {/* прослойка для того, чтобы в ней были видны точки пагинации, вынесенные за контейнер свайпера */}
+              <div className="pagination-wrapper"/>
+            </Swiper>
         }
       </div>
       {

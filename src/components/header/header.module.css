@@ -1,5 +1,6 @@
 .header {
-
+  margin: 0 auto;
+  max-width: 980px;
 }
 
 .header__info-wrap {
@@ -30,7 +31,7 @@
 .text {
   margin: 0;
   color: #fff;
-  font-family: var( --font-family-helvetica);
+  font-family: var(--font-family-helvetica);
   font-weight: 400;
   font-size: 1em;
   line-height: 1.5em;
@@ -85,7 +86,7 @@
 
 @media screen and (max-width: 360px) {
   .navigation {
-    padding: 1em;
+    /*padding: 1em;*/
     gap: .5em;
   }
 }

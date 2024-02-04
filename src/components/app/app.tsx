@@ -36,12 +36,13 @@ import {
 import {getWindowWidth} from '../../utils/functions';
 
 import {TCombinedNavRef, TImage} from '../../services/types';
+import {ScaleText} from '../scale-text/scale-text';
 
 const App: FunctionComponent = () => {
   const [popupIsOpened, setPopupIsOpened] = useState<boolean>(false);
   const [imageToShow, setImageToShow] = useState<TImage>({src: '', index: 0});
   const [isToTopVisible, setIsToTopVisible] = useState(false);
-  const [screenWidth, setScreenWidth] = useState<{innerWidth: number}>(getWindowWidth());
+  const [screenWidth, setScreenWidth] = useState<{ innerWidth: number }>(getWindowWidth());
 
   // const isMobileDevice = screenWidth.innerWidth > 715;
 
@@ -91,7 +92,8 @@ const App: FunctionComponent = () => {
   return (
     <div className={appStyles.content}>
       <Header refs={combinedNavRef} windowWidth={screenWidth.innerWidth}/>
-      <main>
+      <ScaleText windowWidth={screenWidth.innerWidth}/>
+      <main className={appStyles.main}>
         <Hero windowWidth={screenWidth.innerWidth}/>
         <div className={appStyles.decor}/>
         <menu className={appStyles.menu} ref={servicesTypesRef}>
@@ -172,14 +174,21 @@ const App: FunctionComponent = () => {
         </section>
         <section className={appStyles.section}>
           <h2 className={`${appStyles.section__text} ${appStyles.section__text_heading}`}>Отзывы о студии</h2>
-          <div className={appStyles.reviews}>
-            <iframe className={appStyles.reviews__iframe}
-                    src="https://yandex.ru/maps-reviews-widget/106556456544?comments">
-            </iframe>
-            <a href="https://yandex.ru/maps/org/inlime/106556456544/" target="_blank"
-               className={appStyles.reviews__link}>InLime
-              на карте Новороссийска — Яндекс Карты</a>
-          </div>
+          {
+            screenWidth.innerWidth > 595
+              ? <div className={appStyles.reviews}>
+                <iframe className={appStyles.reviews__iframe}
+                        src="https://yandex.ru/maps-reviews-widget/106556456544?comments">
+                </iframe>
+                <a href="https://yandex.ru/maps/org/inlime/106556456544/" target="_blank"
+                   className={appStyles.reviews__link}>InLime
+                  на карте Новороссийска — Яндекс Карты</a>
+              </div>
+              : <a href="https://yandex.ru/maps/org/inlime/106556456544/reviews/?ll=37.783220%2C44.675963&z=15"
+                   target="_blank"
+                   className={`${appStyles.text} ${appStyles.text_link} ${appStyles.text_color_pink}`}
+              >Посмотреть отзывы</a>
+          }
         </section>
         <section className={appStyles.section}>
           <h2 className={`${appStyles.section__text} ${appStyles.section__text_heading}`}>Контакты</h2>
@@ -187,23 +196,30 @@ const App: FunctionComponent = () => {
             <SocialNetworks/>
             <p className={`${appStyles.text} ${appStyles.text_contacts}`}>+7 (964) 893-23-68</p>
             <p className={`${appStyles.text} ${appStyles.text_contacts}`}>г. Новороссийск, 15 мкр-н, ул Южная, 9</p>
-            <div className={appStyles.contacts__map}>
-              <a href="https://yandex.ru/maps/org/inlime/106556456544/?utm_medium=mapframe&utm_source=maps"
-                 className={`${appStyles.contacts__link} ${appStyles.contacts__link_primary}`}>InLime</a>
-              <a
-                href="https://yandex.ru/maps/970/novorossiysk/category/beauty_salon/184105814/?utm_medium=mapframe&utm_source=maps"
-                className={`${appStyles.contacts__link} ${appStyles.contacts__link_secondary}`}></a>
-              <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=37.783220%2C44.675963&mode=search&oid=106556456544&ol=biz&z=15.14"
-                className={appStyles.contacts__iframe}
-                allowFullScreen={true}></iframe>
-            </div>
+            {
+              screenWidth.innerWidth > 595
+                ? <div className={appStyles.contacts__map}>
+                  <a href="https://yandex.ru/maps/org/inlime/106556456544/?utm_medium=mapframe&utm_source=maps"
+                     className={`${appStyles.contacts__link} ${appStyles.contacts__link_primary}`}>InLime</a>
+                  <a
+                    href="https://yandex.ru/maps/970/novorossiysk/category/beauty_salon/184105814/?utm_medium=mapframe&utm_source=maps"
+                    className={`${appStyles.contacts__link} ${appStyles.contacts__link_secondary}`}></a>
+                  <iframe
+                    src="https://yandex.ru/map-widget/v1/?ll=37.783220%2C44.675963&mode=search&oid=106556456544&ol=biz&z=15.14"
+                    className={appStyles.contacts__iframe}
+                    allowFullScreen={true}></iframe>
+                </div>
+                : <a href="https://yandex.ru/maps/org/inlime/106556456544/?utm_medium=mapframe&utm_source=maps"
+                     target="_blank"
+                     className={`${appStyles.text} ${appStyles.text_link} ${appStyles.text_color_pink}`}
+                >Посмотреть на Яндекс Картах</a>
+            }
           </div>
         </section>
-        {/*{*/}
-        {/*  isToTopVisible &&*/}
-        {/*  <ToTopButton ref={headerRef}/>*/}
-        {/*}*/}
+        {
+          isToTopVisible &&
+          <ToTopButton ref={headerRef}/>
+        }
         {
           popupIsOpened &&
           <Popup
