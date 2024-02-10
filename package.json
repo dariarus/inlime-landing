@@ -2,7 +2,7 @@
   "name": "inlime-landing",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://dariarus.github.io/inlime-landing",
+  "homepage": "https://www.inlime-studia.ru",
   "type": "module",
   "scripts": {
     "dev": "vite",

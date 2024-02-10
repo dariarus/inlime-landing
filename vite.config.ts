@@ -7,5 +7,5 @@ export default defineConfig({
       tsDecorators: true
     }),
   ],
-  base: "/inlime-landing/",
+  base: "/",
 })
