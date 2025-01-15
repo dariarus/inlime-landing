@@ -202,10 +202,6 @@ export const eyelashesService = [
     servicePrice: "1790 Р"
   },
   {
-    serviceName: "Окрашивание ресниц",
-    servicePrice: "490 Р"
-  },
-  {
     serviceName: "Снятие ресниц",
     servicePrice: "290 Р"
   },
