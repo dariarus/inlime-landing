@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useEffect, useRef, useState} from 'react';
+import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
 
 import appStyles from './app.module.css';
 import '../../style.css';
@@ -14,15 +14,15 @@ import promoClientDay from '../../images/promotions/promo_client-day.jpg';
 import promoFirstVisit from '../../images/promotions/promo_first-visit.jpg';
 import promoBirthday from '../../images/promotions/promo_birthday.jpg';
 
-import {Header} from '../header/header';
-import {Hero} from '../hero/hero';
-import {MenuItem} from '../menu-item/menu-item';
-import {Popup} from '../popup/popup';
-import {ServiceType} from '../service-type/service-type';
-import {Promo} from '../promo/promo';
-import {Button} from '../button/button';
-import {SocialNetworks} from '../social-networks/social-networks';
-import {ToTopButton} from '../to-top-button/to-top-button';
+import { Header } from '../header/header';
+import { Hero } from '../hero/hero';
+import { MenuItem } from '../menu-item/menu-item';
+import { Popup } from '../popup/popup';
+import { ServiceType } from '../service-type/service-type';
+import { Promo } from '../promo/promo';
+import { Button } from '../button/button';
+import { SocialNetworks } from '../social-networks/social-networks';
+import { ToTopButton } from '../to-top-button/to-top-button';
 
 import {
   eyebrowsService,
@@ -35,10 +35,10 @@ import {
   pedicurePortfolio,
   pedicureService
 } from '../../utils/constants';
-import {getWindowWidth} from '../../utils/functions';
+import { getWindowWidth } from '../../utils/functions';
 
-import {TCombinedNavRef, TImage} from '../../services/types';
-import {ScaleText} from '../scale-text/scale-text';
+import { TCombinedNavRef, TImage } from '../../services/types';
+import { ScaleText } from '../scale-text/scale-text';
 
 const App: FunctionComponent = () => {
   const [popupIsOpened, setPopupIsOpened] = useState<boolean>(false);
@@ -121,13 +121,12 @@ const App: FunctionComponent = () => {
               <span className={appStyles.text_color_pink}>In</span><span
               className={appStyles.text_color_lime}>Lime</span> - студия красоты, специализирующаяся на одновременном
               оказании услуг маникюра, педикюра, коррекции бровей и наращивании ресничек.
-              Клиенты, которые ценят своё время, выбирают нас,
-              чтобы за 2.5 часа сделать сразу 2 или 3 услуги.
+              Клиенты, которые ценят своё время, выбирают нас, чтобы за 2.5 часа сделать сразу 2 или 3 услуги.
             </p>
-            <p className={appStyles.text}>Мы дорожим своими клиентами, поэтому
-              наши мастера работают исключительно на качественных материалах, а инструменты перед процедурой проходят
-              все необходимые
-              этапы стерилизации.</p>
+            <p className={appStyles.text}>Мы дорожим своими клиентами, поэтому наши мастера работают исключительно на
+              качественных материалах, а инструменты перед процедурой проходят все необходимые этапы стерилизации.</p>
+            <p className={appStyles.text}>И клиенты это ценят: мы получили такие престижные награды как "Хорошее место"
+              от Яндекса, а также вошли в ТОП-7 салонов города с наградой DIKIDI-AWARDS.</p>
             <p className={appStyles.text}>Записывайтесь к нам по телефону, через WhatsApp,
               Instagram, или на сайте DIKIDI!</p>
           </div>
