@@ -110,8 +110,8 @@ const App: FunctionComponent = () => {
           <div className={appStyles.menu__list}>
             <MenuItem service="Маникюр" url={manicure} ref={manicureRef} windowWidth={screenWidth.innerWidth}/>
             <MenuItem service="Педикюр" url={pedicure} ref={pedicureRef} windowWidth={screenWidth.innerWidth}/>
-            <MenuItem service="Брови" url={eyebrows} ref={eyebrowsRef} windowWidth={screenWidth.innerWidth}/>
             <MenuItem service="Реснички" url={eyelashes} ref={eyelashesRef} windowWidth={screenWidth.innerWidth}/>
+            <MenuItem service="Брови" url={eyebrows} ref={eyebrowsRef} windowWidth={screenWidth.innerWidth}/>
           </div>
         </menu>
         <section className={appStyles.section} ref={aboutUsRef}>
@@ -157,10 +157,10 @@ const App: FunctionComponent = () => {
                        ref={manicureRef} windowWidth={screenWidth.innerWidth}/>
           <ServiceType serviceHeading="Педикюр" servicesList={pedicureService} portfolio={pedicurePortfolio}
                        ref={pedicureRef} windowWidth={screenWidth.innerWidth}/>
-          <ServiceType serviceHeading="Брови" servicesList={eyebrowsService} portfolio={eyebrowsPortfolio}
-                       ref={eyebrowsRef} windowWidth={screenWidth.innerWidth}/>
           <ServiceType serviceHeading="Реснички" servicesList={eyelashesService} portfolio={eyelashesPortfolio}
                        ref={eyelashesRef} windowWidth={screenWidth.innerWidth}/>
+          <ServiceType serviceHeading="Брови" servicesList={eyebrowsService} portfolio={eyebrowsPortfolio}
+                       ref={eyebrowsRef} windowWidth={screenWidth.innerWidth}/>
         </section>
         <section className={appStyles.section} ref={promosRef}>
           <h2 className={`${appStyles.section__text} ${appStyles.section__text_heading}`}>Акции</h2>
