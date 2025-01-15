@@ -13,7 +13,6 @@ type THeader = {
 }
 
 export const Header: FunctionComponent<THeader> = (props) => {
-  console.log(props.windowWidth)
   return (
     <header className={headerStyles.header} ref={props.refs.headerRef}>
       {
