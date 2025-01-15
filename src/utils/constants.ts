@@ -124,85 +124,105 @@ export const eyelashesPortfolio = [
 
 export const manicureService = [
   {
-    serviceName: "Без покрытия",
-    servicePrice: "690 Р"
+    serviceName: "Комбинированный маникюр",
+    servicePrice: "990 Р"
   },
   {
-    serviceName: "С покрытием гель-лак",
-    servicePrice: "1490 Р"
+    serviceName: "Снятие покрытия с маникюром",
+    servicePrice: "1190 Р"
   },
   {
-    serviceName: "Гелевая коррекция",
-    servicePrice: "1590 Р"
+    serviceName: "С покрытием гель-лаком",
+    servicePrice: "1690 Р"
   },
   {
-    serviceName: "Наращивание гелем с нуля",
+    serviceName: "Коррекция наращенных ногтей",
     servicePrice: "1990 Р"
   },
   {
-    serviceName: "Френч",
-    servicePrice: "200 Р"
+    serviceName: "Наращивание гелем с нуля",
+    servicePrice: "2490 Р"
   },
   {
-    serviceName: "Дизайн",
+    serviceName: "Френч",
+    servicePrice: "300 Р"
+  },
+  {
+    serviceName: "Дизайн одного ногтя",
     servicePrice: "от 50 Р"
   },
 ];
 
 export const pedicureService = [
   {
-    serviceName: "Смарт-педикюр с пяточками, без покрытия",
-    servicePrice: "1290 Р"
-  },
-  {
-    serviceName: "С покрытием гель-лак, без пяточек",
-    servicePrice: "1590 Р"
-  },
-  {
-    serviceName: "Полный педикюр, с покрытием и пяточками",
+    serviceName: "SMART-педикюр без покрытия",
     servicePrice: "1890 Р"
   },
   {
+    serviceName: "SMART-педикюр с покрытием гель-лаком, без пяточек",
+    servicePrice: "2090 Р"
+  },
+  {
+    serviceName: "SMART-педикюр с покрытием гель-лаком, с пяточками",
+    servicePrice: "2390 Р"
+  },
+  {
     serviceName: "Френч",
-    servicePrice: "200 Р"
+    servicePrice: "300 Р"
   },
   {
-    serviceName: "Дизайн",
+    serviceName: "Дизайн одного ногтя",
     servicePrice: "от 50 Р"
-  },
-];
-
-export const eyebrowsService = [
-  {
-    serviceName: "Коррекция бровей без окрашивания",
-    servicePrice: "490 Р"
-  },
-  {
-    serviceName: "Коррекция бровей с окрашиванием",
-    servicePrice: "890 Р"
-  },
-  {
-    serviceName: "Ламинирование бровей",
-    servicePrice: "1490 Р"
   },
 ];
 
 export const eyelashesService = [
   {
     serviceName: "2D",
-    servicePrice: "1690 Р"
+    servicePrice: "2090 Р"
   },
   {
     serviceName: "3D",
-    servicePrice: "1990 Р"
+    servicePrice: "2290 Р"
   },
   {
     serviceName: "4D",
-    servicePrice: "2290 Р"
+    servicePrice: "2490 Р"
+  },
+  {
+    serviceName: "5D",
+    servicePrice: "2690 Р"
+  },
+  {
+    serviceName: "6D",
+    servicePrice: "2890 Р"
+  },
+  {
+    serviceName: "Ламинирование ресниц",
+    servicePrice: "1790 Р"
+  },
+  {
+    serviceName: "Окрашивание ресниц",
+    servicePrice: "490 Р"
   },
   {
     serviceName: "Снятие ресниц",
     servicePrice: "290 Р"
+  },
+];
+
+export const eyebrowsService = [
+  {
+    serviceName: "Ламинирование бровей",
+    servicePrice: "1490 Р"
+  },
+  {
+    serviceName: "Коррекция бровей без окрашивания",
+    servicePrice: "790 Р"
+  },
+  {
+    serviceName: "Коррекция бровей с окрашиванием",
+    servicePrice: "1190 Р"
   },
 ];
 
